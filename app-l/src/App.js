@@ -4,7 +4,6 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           my name is L and i am the coolest!
@@ -17,7 +16,12 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        <h1> React vs. Javascript vs. Typescript</h1>
+        <ul>
+          <li>
+            Typescript is typed Javascript.
+          </li>
+        </ul>
     </div>
   );
 }
