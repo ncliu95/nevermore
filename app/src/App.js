@@ -1,4 +1,3 @@
-
 import './App.css';
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
           style={{ color: '#ffffff' }}
         >
           More about LeBron James
-
+        </a>
         <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
         <h1 className="text">
           We love cats!

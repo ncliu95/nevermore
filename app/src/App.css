@@ -5,11 +5,15 @@
 
 .App-bron {
   height: 40vmin;
+  position: relative;
+  top: 50px;
+  right: 30%;
 }
 .cat-img {
   height: 30vmin;
   position: relative;
-  top: -100px;
+  top: 100px;
+  right: 35%;
 
   pointer-events: none;
 }
@@ -22,7 +26,7 @@
   .cat-img {
     animation: App-logo-spin infinite 20s linear;
   }
-
+}
 
 .App-header {
   background-color: #282c34;
@@ -37,6 +41,9 @@
 
 .App-link-will {
   color: #61dafb;
+  position: relative;
+  right: -30%;
+  top: -70px;
 }
 
 @keyframes App-bron-move {
@@ -45,8 +52,13 @@
   }
   to {
     transform: translateX(50%);
+  }
+}
 .App-link{
   color: #ffffff;
+  position: relative;
+  right: -30%;
+  top: -70px;
 }
 
 .App-link:hover{
@@ -90,3 +102,4 @@
     transform: rotate(360deg);
   }
 }
+  
