@@ -1,21 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Lebron James is very&nbsp;
+          <as
+          classname="yellow"
+          style={{ color: '#ffff00' }}>
+            fast
+          </as>.
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          className="Source"
+          href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ color: '#ffffff' }}
         >
-          Learn React
+          More about LeBron James
         </a>
       </header>
     </div>
