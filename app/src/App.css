@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
+.cat-img {
   height: 30vmin;
   position: relative;
   top: -100px;
@@ -10,7 +10,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .cat-img {
     animation: App-logo-spin infinite 20s linear;
   }
 }

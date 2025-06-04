@@ -1,11 +1,11 @@
-import cat from './cat.jpeg';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={cat} className="App-logo" alt="logo" />
+        <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
         <h1 className="text">
           We love cats!
         </h1>
