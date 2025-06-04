@@ -1,9 +1,11 @@
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+
         <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
         <p>
           Lebron James is very&nbsp;
@@ -14,13 +16,26 @@ function App() {
           </as>.
         </p>
         <a
-          className="Source"
+          className="App-link-will"
           href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: '#ffffff' }}
         >
           More about LeBron James
+
+        <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
+        <h1 className="text">
+          We love cats!
+        </h1>
+        <a
+          className="App-link"
+          href="https://en.wikipedia.org/wiki/Tabby_cat"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Click for more cats!
+
         </a>
       </header>
     </div>
