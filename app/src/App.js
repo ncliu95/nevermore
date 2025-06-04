@@ -1,21 +1,49 @@
+import {useState,useEffect} from 'react';
 import './App.css';
-import {useState} from "react";
+
+
 
 function App() {
+
+  const [inputValue, setInputValue ] = useState('');
+  const [displayText, setDisplayText] = useState('most people');
+
+  useEffect(() => {
+    if (inputValue.trim()!==''){
+      setDisplayText(inputValue);
+    }
+    if(inputValue.trim()===''){
+      setDisplayText('most people');
+    }
+  }, [inputValue]);
+  
+
   const [animal, setAnimal] = useState("cats");
   return (
     <div className="App">
       <header className="App-header">
 
         <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
+
         <p>
-          Lebron James is very&nbsp;
-          <as
-          classname="yellow"
+          Lebron James is&nbsp;
+          <span
+          className="yellow"
           style={{ color: '#ffff00' }}>
-            fast
-          </as>.
+            faster&nbsp;
+          </span>
+          <span id="Letext">than {displayText}</span> 
         </p>
+
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Who is the fastest person you know?"
+          size ="34"
+          
+          
+/>
         <a
           className="App-link-will"
           href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
@@ -49,5 +77,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
