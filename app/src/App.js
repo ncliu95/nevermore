@@ -22,38 +22,39 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="container">
+          <div className="row">
+            <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
 
-        <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
+            <p>
+              Lebron James is&nbsp;
+              <span
+              className="yellow"
+              style={{ color: '#ffff00' }}>
+                faster&nbsp;
+              </span>
+              <span id="Letext">than {displayText}</span> 
+            </p>
 
-        <p>
-          Lebron James is&nbsp;
-          <span
-          className="yellow"
-          style={{ color: '#ffff00' }}>
-            faster&nbsp;
-          </span>
-          <span id="Letext">than {displayText}</span> 
-        </p>
-
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Who is the fastest person you know?"
-          size ="34"
-          
-          
-/>
-        <a
-          className="App-link-will"
-          href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: '#ffffff' }}
-        >
-          More about LeBron James
-        </a>
-        <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Who is the fastest person you know?"
+              size ="34"
+            />
+            <a
+              className="App-link-will"
+              href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#ffffff' }}
+            >
+              More about LeBron James
+            </a>
+          </div>
+        <div className="row">
+          <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
         <h1 className="text">
           We love {animal}!
         </h1>
@@ -73,6 +74,9 @@ function App() {
         onChange={(e) => setAnimal(e.target.value)}
         placeholder="Type your favorite animal!">
         </input>
+        </div>
+        
+        </div>
       </header>
     </div>
   );
