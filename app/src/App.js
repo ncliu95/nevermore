@@ -18,6 +18,7 @@ function App() {
     if(inputValue.trim()===''){
       setDisplayText('most people');
     }
+    
   }, [inputValue]);
   
   const handleSend = () => {
@@ -106,10 +107,17 @@ function App() {
                       onChange={(e) => setBasketballInput(e.target.value)}
                       placeholder="Type a name..."
                       className="chat-input"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleSend();
+                        }
+                      }}
                     />
                     <button
                       onClick={handleSend}
                       className="send-button"
+                      
+                      
                     >
                       Send
                     </button>
