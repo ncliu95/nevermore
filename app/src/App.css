@@ -182,7 +182,8 @@
 
 .box-wrapper {
   position: relative;
-  width: 320px;
+  width: 100%;
+  max-width: 400 px;
   margin: 0 auto;
 }
 
