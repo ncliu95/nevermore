@@ -47,11 +47,10 @@ function Will() {
                     size ="34"
                     />
                     <a
-                    className="App-link-will"
+                    className="App-link"
                     href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: '#ffffff' }}
                     >
                     More about LeBron James
                     </a>
@@ -68,7 +67,7 @@ function Will() {
                     </div>
                     <div className="innerBox">
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <label htmlFor="greatestPlayerInput" style={{ fontSize: '12px', color: '#222' }}>
+                        <label htmlFor="greatestPlayerInput" className = "leChat-prompt">
                         Who is the greatest basketball player?
                         </label>
                         <div className="input-group">
@@ -78,7 +77,7 @@ function Will() {
                             value={basketballInput}
                             onChange={(e) => setBasketballInput(e.target.value)}
                             placeholder="Type a name..."
-                            className="chat-input"
+                            className="le-input"
                             onKeyDown={(e) => {
                             if (e.key === 'Enter') {
                                 handleSend();

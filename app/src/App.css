@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #222;
 }
 
 .App-link {
@@ -28,10 +28,6 @@
   transition: color 0.3s;
 }
 
-.App-link-will {
-  color: #61dafb;
-}
-
 .cat-img {
   height: 30vmin;
   position: relative;
@@ -39,11 +35,9 @@
   pointer-events: none;
 }
 
-.chat-input {
+.le-input {
   flex: 1;
   padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
   font-size: 14px;
 }
 
@@ -113,21 +107,13 @@
   padding-bottom: 80px;
 }
 
+.leChat-prompt {
+  font-size: '12px';
+  color: '#222';
+}
+
 .page-content {
   padding-top: 240px;
-}
-
-.send-button {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.send-button:hover {
-  background-color: #0056b3;
 }
 
 .send-button {
@@ -141,7 +127,7 @@
 }
 
 .send-button:hover {
-  background-color: #000265;
+  background-color: #002b82;
 }
 
 .row {
