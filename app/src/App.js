@@ -1,31 +1,62 @@
+import {useState,useEffect} from 'react';
 import './App.css';
 
+
+
 function App() {
+
+  const [inputValue, setInputValue ] = useState('');
+  const [displayText, setDisplayText] = useState('most people');
+
+  useEffect(() => {
+    if (inputValue.trim()!==''){
+      setDisplayText(inputValue);
+    }
+    if(inputValue.trim()===''){
+      setDisplayText('most people');
+    }
+  }, [inputValue]);
+  
+
+  const [animal, setAnimal] = useState("cats");
   return (
     <div className="App">
       <header className="App-header">
+        <div className="container">
+          <div className="row">
+            <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
 
-        <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
-        <p>
-          Lebron James is very&nbsp;
-          <as
-          classname="yellow"
-          style={{ color: '#ffff00' }}>
-            fast
-          </as>.
-        </p>
-        <a
-          className="App-link-will"
-          href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: '#ffffff' }}
-        >
-          More about LeBron James
-        </a>
-        <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
+            <p>
+              Lebron James is&nbsp;
+              <span
+              className="yellow"
+              style={{ color: '#ffff00' }}>
+                faster&nbsp;
+              </span>
+              <span id="Letext">than {displayText}</span> 
+            </p>
+
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Who is the fastest person you know?"
+              size ="34"
+            />
+            <a
+              className="App-link-will"
+              href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#ffffff' }}
+            >
+              More about LeBron James
+            </a>
+          </div>
+        <div className="row">
+          <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
         <h1 className="text">
-          We love cats!
+          We love {animal}!
         </h1>
         <a
           className="App-link"
@@ -36,9 +67,21 @@ function App() {
           Click for more cats!
 
         </a>
+        <input Add commentMore actions
+        id="input"
+        type="text" 
+        value={animal} 
+        onChange={(e) => setAnimal(e.target.value)}
+        placeholder="Type your favorite animal!">
+        </input>
+        </div>
+        
+        </div>
       </header>
     </div>
   );
 }
+
+
 
 export default App;

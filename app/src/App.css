@@ -1,3 +1,17 @@
+.container{
+  display:flex;
+  justify-content: space-between;
+}
+
+.row{
+  display:flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .App {
   text-align: center;
 }
@@ -6,15 +20,12 @@
 .App-bron {
   height: 40vmin;
   position: relative;
-  top: 50px;
-  right: 30%;
+
 }
 .cat-img {
   height: 30vmin;
   position: relative;
-  top: 100px;
-  right: 35%;
-
+  top: -50px;
   pointer-events: none;
 }
 
@@ -41,9 +52,6 @@
 
 .App-link-will {
   color: #61dafb;
-  position: relative;
-  right: -30%;
-  top: -70px;
 }
 
 @keyframes App-bron-move {
@@ -53,12 +61,12 @@
   to {
     transform: translateX(50%);
   }
+
+
 }
 .App-link{
   color: #ffffff;
   position: relative;
-  right: -30%;
-  top: -70px;
 }
 
 .App-link:hover{
@@ -72,6 +80,18 @@
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
 }
+
+#input{
+  field-sizing: fixed;
+  background-color: #282c34;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.837);
+  margin-top: 20px;
+}
+
 
 @keyframes color-change{
   0%, 16%{
