@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-bron {
-  height: 40vmin;
-  position: relative;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,19 +23,6 @@
   transition: color 0.3s;
 }
 
-.cat-img {
-  height: 30vmin;
-  position: relative;
-  top: -50px;
-  pointer-events: none;
-}
-
-.le-input {
-  flex: 1;
-  padding: 6px;
-  font-size: 14px;
-}
-
 .chat-message {
   background-color: #ffffff;
   padding: 8px 12px;
@@ -55,15 +37,9 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-}
-
-.input-group {
-  display: flex;
-  gap: 8px;
-  margin-top: 4px;
 }
 
 .navBar {
@@ -94,40 +70,8 @@
   color: yellow;
 }
 
-.outerBox {
-  position: relative;
-  width: 100%;
-  min-height: 180px;
-  background-color: #515151;
-  border: 1px solid #cccccc1c;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-  z-index: 1;
-  padding-bottom: 80px;
-}
-
-.leChat-prompt {
-  font-size: '12px';
-  color: '#222';
-}
-
 .page-content {
   padding-top: 240px;
-}
-
-.send-button {
-  padding: 8px 14px;
-  font-size: 14px;
-  background-color: #000b53;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.send-button:hover {
-  background-color: #002b82;
 }
 
 .row {
@@ -137,91 +81,4 @@
   margin-right: 150px;
   align-items: center;
   justify-content: flex-start;
-}
-
-.text {
-  color: white;
-  animation: color-change 5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-
-#input {
-  field-sizing: fixed;
-  background-color: #282c34;
-  border: none;
-  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 1em;
-  color: rgba(255, 255, 255, 0.837);
-  margin-top: 20px;
-}
-
-.innerBox {
-  position: relative;
-  background-color: white;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 12px;
-  box-sizing: border-box;
-  color: #333;
-  margin-top: -80px;
-  z-index: 2;
-}
-
-.box-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 400 px;
-  margin: 0 auto;
-}
-
-@keyframes App-bron-move {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(50%);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes color-change {
-  0%, 16% {
-    color: blue;
-  }
-  17%, 33% {
-    color: green;
-  }
-  34%, 50% {
-    color: yellow;
-  }
-  51%, 66% {
-    color: orange;
-  }
-  67%, 83% {
-    color: red;
-  }
-  84%, 100% {
-    color: purple;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-bron {
-    animation: App-bron-move infinite 2s alternate linear;
-  }
-  .cat-img {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }

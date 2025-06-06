@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import '../App.css';
+import '../cssFiles/Images.css';
 
 function Images() {
       const [animal, setAnimal] = useState("cats");
@@ -33,8 +34,8 @@ function Images() {
           Click for more cats!
 
         </a>
-        <input Add commentMore actions
-        id="input"
+        <input 
+        className='input'
         type="text" 
         value={animal} 
         onChange={(e) => setAnimal(e.target.value)}
@@ -42,31 +43,32 @@ function Images() {
         </input>
         </div>
          <div className="row">
-                    <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
-                    <p>
-                    Lebron James is&nbsp;
-                    <span
-                    className="yellow"
-                    style={{ color: '#ffff00' }}>
-                        faster&nbsp;
-                    </span>
-                    <span id="Letext">than {displayText}</span> 
-                    </p>
-                    <input
-                    type="text"
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Who is the fastest person you know?"
-                    size ="34"
-                    />
-                    <a
-                    className="App-link"
-                    href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    More about LeBron James
-                    </a>
+            <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
+            <p className="App-bron-text">
+            Lebron James is&nbsp;
+            <span
+            style={{ color: '#ffff00' }}>
+                faster&nbsp;
+            </span>
+            <span id="Letext">than {displayText}</span> 
+            </p>
+            <a
+            className="App-link"
+            href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            More about LeBron James
+            </a>
+            <input
+            className='input'
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Who is the fastest person you know?"
+            size ="34"
+            />
+            
             </div>
        </div>
         </div>

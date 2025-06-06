@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
+import '../cssFiles/Will-chat.css';
 
 function Will() {
     
@@ -32,7 +33,7 @@ function Will() {
                     ))}
                     </div>
                     <div className="innerBox">
-                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                    <div>
                         <label htmlFor="greatestPlayerInput" className = "leChat-prompt">
                         Who is the greatest basketball player?
                         </label>

@@ -1,0 +1,97 @@
+.App-bron {
+  height: 35vmin;
+  position: relative;
+}
+
+
+.cat-img {
+  height: 30vmin;
+  position: relative;
+  top: -50px;
+  pointer-events: none;
+}
+
+.le-input {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.App-bron-text {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: white;
+  animation: color-change 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.input{
+
+  field-sizing: fixed;
+  background-color: #282c34;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.837);
+  margin-top: 20px;
+}
+
+.input::placeholder{
+  color:white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-bron-move {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+
+
+@keyframes color-change {
+  0%, 16% {
+    color: blue;
+  }
+  17%, 33% {
+    color: green;
+  }
+  34%, 50% {
+    color: yellow;
+  }
+  51%, 66% {
+    color: orange;
+  }
+  67%, 83% {
+    color: red;
+  }
+  84%, 100% {
+    color: purple;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-bron {
+    animation: App-bron-move infinite 2s alternate linear;
+  }
+  .cat-img {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
