@@ -8,6 +8,9 @@ function App() {
   const [inputValue, setInputValue ] = useState('');
   const [displayText, setDisplayText] = useState('most people');
 
+  const [basketballInput, setBasketballInput] = useState('');
+  const [messages, setMessages] = useState([]);
+
   useEffect(() => {
     if (inputValue.trim()!==''){
       setDisplayText(inputValue);
@@ -17,6 +20,12 @@ function App() {
     }
   }, [inputValue]);
   
+  const handleSend = () => {
+    if (basketballInput.trim() !== '') {
+      setMessages([...messages, basketballInput.trim()]);
+      setBasketballInput('');
+    }
+  };
 
   const [animal, setAnimal] = useState("cats");
   return (
@@ -75,13 +84,43 @@ function App() {
         placeholder="Type your favorite animal!">
         </input>
         </div>
-        
+       <div className="row">
+            <div className="box-wrapper">
+              <div className="outerBox">
+                {messages.map((msg, index) => (
+                  <div key={index} className="chat-message">
+                    {msg}
+                  </div>
+                ))}
+              </div>
+              <div className="innerBox">
+                <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                  <label htmlFor="greatestPlayerInput" style={{ fontSize: '12px', color: '#222' }}>
+                    Who is the greatest basketball player?
+                  </label>
+                  <div className="input-group">
+                    <input
+                      id="greatestPlayerInput"
+                      type="text"
+                      value={basketballInput}
+                      onChange={(e) => setBasketballInput(e.target.value)}
+                      placeholder="Type a name..."
+                      className="chat-input"
+                    />
+                    <button
+                      onClick={handleSend}
+                      className="send-button"
+                    >
+                      Send
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
     </div>
   );
 }
-
-
-
 export default App;
