@@ -22,7 +22,6 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   const submit_function = (e) => {
-    e.preventDefault();
     if (note.trim() === '') return;
     setNotes([...notes, note]);  
     setNote(''); 
