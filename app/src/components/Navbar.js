@@ -1,13 +1,34 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+
+  const navigate = useNavigate();
+
+  const homenav = () => {
+    navigate("/home");
+  };
+  const bennav = () => {
+    navigate("/ben");
+  };
+  const willnav = () => {
+    navigate("/will");
+  };
+    const imagenav = () => {
+    navigate("/images");
+  };
   return (
     <nav className='navBar'>
       <ul className='nav-List'>
-        <li className='App-Link'><Link to="/">Home</Link></li>
-        <li className='App-Link'><Link to="/ben">Ben's Page</Link></li>
-        <li className='App-Link'><Link to="/will">Will's Page</Link></li>
-        <li className='App-Link'><Link to="/images">Images</Link></li>
+
+                <div class="header-buttons">
+                <div class="header-button" onClick={homenav}> Home</div>
+                <div class="header-button" onClick={bennav}>Ben's Page</div>
+                <div class="header-button" onClick={willnav}>Will's Page</div>
+                <div class="header-button"onClick={imagenav}>Images</div>
+                </div> 
+
       </ul>
     </nav>
   );
