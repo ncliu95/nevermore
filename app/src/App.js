@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react';
 import './App.css';
 
 
+
 function App() {
 
   const [inputValue, setInputValue ] = useState('');
@@ -16,6 +17,7 @@ function App() {
     }
   }, [inputValue]);
   
+
   const [animal, setAnimal] = useState("cats");
 
   const [note, setNote] = useState('');
@@ -34,7 +36,6 @@ function App() {
         <div className="container">
           <div className="row">
             <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
-
             <p>
               Lebron James is&nbsp;
               <span
@@ -109,8 +110,6 @@ function App() {
               >
                 Submit
               </button>
-
-
             
     </div>
         </div>
