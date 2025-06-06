@@ -11,7 +11,6 @@ function App() {
   const [basketballInput, setBasketballInput] = useState('');
   const [messages, setMessages] = useState([]);
 
-
   useEffect(() => {
     if (inputValue.trim()!==''){
       setDisplayText(inputValue);
@@ -19,11 +18,8 @@ function App() {
     if(inputValue.trim()===''){
       setDisplayText('most people');
     }
-    
   }, [inputValue]);
   
-
-
   const handleSend = () => {
     if (basketballInput.trim() !== '') {
       setMessages([...messages, basketballInput.trim()]);
@@ -110,12 +106,6 @@ function App() {
                       onChange={(e) => setBasketballInput(e.target.value)}
                       placeholder="Type a name..."
                       className="chat-input"
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          handleSend();
-                        }
-                      }
-                      }
                     />
                     <button
                       onClick={handleSend}

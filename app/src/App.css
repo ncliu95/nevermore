@@ -137,11 +137,6 @@
   transition: color 0.3s;
 }
 
-.App-link-will:hover {
-  color: rgb(0, 165, 206);
-  transition: color 0.3s;
-}
-
 .text {
   color: white;
   animation: color-change 5s;
