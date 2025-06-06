@@ -10,17 +10,20 @@ import Navbar from './components/Navbar';
 function App() {  
   return (
     <div className="App">
-      <header className="App-header">
+    <header className="App-header">
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/will" element={<Will />} />
-        <Route path="/ben" element={<Ben />} />
-      </Routes>
+        
+        <Routes>
+          <Route path="/will" element={<Will />} />
+          <Route path="/ben" element={<Ben />} />
+        </Routes>
+        
     </Router>
+        
   
-      </header>
-    </div>
+    </header>
+      </div>
   );
 }
 export default App;

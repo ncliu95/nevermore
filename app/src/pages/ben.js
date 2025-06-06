@@ -4,6 +4,7 @@ import '../App.css';
 function Ben() {
     const [animal, setAnimal] = useState("cats");
   return (
+    <div className="page-content">
      <div className="container">
           
         <div className="row">
@@ -28,7 +29,7 @@ function Ben() {
         placeholder="Type your favorite animal!">
         </input>
         </div>
-       
+       </div>
         </div>
   );
 }

@@ -26,6 +26,7 @@ function Will() {
 
     return (
         <>
+        <div className="page-content">
         <div className="container">
             <div className="row">
                     <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
@@ -95,6 +96,7 @@ function Will() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         </>
           
