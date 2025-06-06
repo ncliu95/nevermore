@@ -1,18 +1,7 @@
 import {useState,useEffect} from 'react';
 import './App.css';
-import {Routes} from "react-router";
 
-function Home() {
 
-}
-
-function Will() {
-  
-}
-
-function Ben(){
-
-}
 
 function App() {
 
