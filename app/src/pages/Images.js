@@ -33,8 +33,8 @@ function Images() {
           Click for more cats!
 
         </a>
-        <input Add commentMore actions
-        id="input"
+        <input 
+        className="input"
         type="text" 
         value={animal} 
         onChange={(e) => setAnimal(e.target.value)}

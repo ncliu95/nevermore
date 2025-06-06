@@ -19,8 +19,7 @@ const Navbar = () => {
     navigate("/images");
   };
   return (
-    <nav className='navBar'>
-      <ul className='nav-List'>
+    <div className='navBar'>
 
                 <div class="header-buttons">
                 <div class="header-button" onClick={homenav}> Home</div>
@@ -28,9 +27,7 @@ const Navbar = () => {
                 <div class="header-button" onClick={willnav}>Will's Page</div>
                 <div class="header-button"onClick={imagenav}>Images</div>
                 </div> 
-
-      </ul>
-    </nav>
+    </div>
   );
 };
 

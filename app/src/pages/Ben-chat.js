@@ -7,15 +7,20 @@ function Ben() {
   const [notes, setNotes] = useState([]);
 
   const submit_function = (e) => {
-    e.preventDefault();
     if (note.trim() === '') return;
     setNotes([...notes, note]);  
     setNote(''); 
   };
+
+  const key_submit = (e) =>{
+    if(e.key === "Enter"){setNotes([...notes, note]);  
+            setNote(''); }
+            
+  }
   
   
   return (          
-          <div className="notes">
+          <div>
           <div>
               {notes.length === 0 ? (
                 <p>No notes yet.</p>
@@ -27,21 +32,22 @@ function Ben() {
                 ))
               )}
             </div>
-              <textarea className="input"
+            <div className="input-div">
+              <input
+                className="chat-input"
+                type="text"
                 rows="4"
-                placeholder="Write your note here..."
+                placeholder="Type your message.."
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
               />
-              <button className="button"
-                type="submit"
+              <button className="chat-button"
                 onClick={submit_function}
+                onKeyDown={key_submit}
               >
                 Submit
               </button>
-
-
-            
+            </div>
     </div>
   );
 }
