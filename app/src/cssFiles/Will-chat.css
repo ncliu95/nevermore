@@ -36,20 +36,29 @@
   padding: 12px;
   box-sizing: border-box;
   color: #333;
-  margin-top: -80px;
+  margin-top: -140px;
   z-index: 2;
+}
+
+.row-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 5vw;;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .box-wrapper {
   position: relative;
   width: 100%;
-  max-width: 400 px;
   margin: 0 auto;
 }
 
 .leChat-prompt {
-  font-size: '12px';
-  color: '#222';
+  font-size: 15px;
+  color: #222;
+  white-space: nowrap;
 }
 
 .input-group {

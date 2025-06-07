@@ -20,10 +20,9 @@ function Will() {
     return (
         <>
         <div className="page-content">
-        <div className="container">
            
             
-            <div className="row">
+            <div className="row-full">
                 <div className="box-wrapper">
                     <div className="outerBox">
                     {messages.map((msg, index) => (
@@ -63,7 +62,7 @@ function Will() {
                 </div>
             </div>
         </div>
-        </div>
+        
         </>
           
   );
