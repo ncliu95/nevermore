@@ -12,21 +12,16 @@ function Ben() {
     setNote(''); 
   };
 
-  const key_submit = (e) =>{
-    if(e.key === "Enter"){setNotes([...notes, note]);  
-            setNote(''); }
-            
-  }
   
   
   return (          
           <div>
-          <div>
+          <div className="chat-area">
               {notes.length === 0 ? (
-                <p>No notes yet.</p>
+                <p className="chat-text">Ask Anything.</p>
               ) : (
                 notes.map((n, index) => (
-                  <div key={index}>
+                  <div key={index} className="textbox">
                     {n}
                   </div>
                 ))
@@ -36,17 +31,18 @@ function Ben() {
               <input
                 className="chat-input"
                 type="text"
-                rows="4"
                 placeholder="Type your message.."
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
+                onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    submit_function();
+                }
+                }}
               />
-              <button className="chat-button"
-                onClick={submit_function}
-                onKeyDown={key_submit}
-              >
-                Submit
-              </button>
+              <div onClick={submit_function} className="chat-button">
+              <img src='assets/arrow.png' className="arrow"></img>
+              </div>
             </div>
     </div>
   );
