@@ -1,21 +1,11 @@
-.outerBox {
-  position: relative;
-  width: 100%;
-  min-height: 180px;
-  background-color: #515151;
-  border: 1px solid #cccccc1c;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-  z-index: 1;
-  padding-bottom: 80px;
-}
+
 
 .send-button:hover {
   background-color: #002b82;
 }
 
 .input {
+  width: 50%;
   field-sizing: fixed;
   background-color: #282c34;
   border: none;
@@ -27,17 +17,20 @@
 }
 
 .innerBox {
-  position: relative;
+  position: fixed;
+  bottom: 3%;
+  left: 15%;
+  align-items: center;
+  width: 70%;
   background-color: white;
-  border: 1px solid #bbb;
+  border: 20px solid #bbb;
   border-radius: 8px;
-  width: 90%;
-  margin: 0 auto;
   padding: 12px;
-  box-sizing: border-box;
   color: #333;
-  margin-top: -140px;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .row-full {
@@ -47,13 +40,18 @@
   align-items: center;
   justify-content: flex-start;
 }
-
-.box-wrapper {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  left: 10%;
+  background-color: 	#218aff;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px 0;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
-
 .leChat-prompt {
   font-size: 15px;
   color: #222;
@@ -61,9 +59,10 @@
 }
 
 .input-group {
+  width: 50%;
   display: flex;
   gap: 8px;
-  margin-top: 4px;
+  
 }
 
 .send-button {

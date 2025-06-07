@@ -23,45 +23,44 @@ function Will() {
            
             
             <div className="row-full">
-                <div className="box-wrapper">
                     <div className="outerBox">
+                    
+                    <div className="innerBox">
+                    
+                        <h2 className = "leChat-prompt">
+                        Who is the greatest basketball player?
+                        </h2>
+                        <div className="input-group">
+                            <input
+                                id="greatestPlayerInput"
+                                type="text"
+                                value={basketballInput}
+                                onChange={(e) => setBasketballInput(e.target.value)}
+                                placeholder="Type a name..."
+                                className="le-input"
+                                onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSend();
+                                }
+                                }}
+                            />
+                            <button
+                                onClick={handleSend}
+                                className="send-button"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                    </div>
                     {messages.map((msg, index) => (
                         <div key={index} className="chat-message">
                         {msg}
                         </div>
                     ))}
-                    </div>
-                    <div className="innerBox">
-                    <div>
-                        <label htmlFor="greatestPlayerInput" className = "leChat-prompt">
-                        Who is the greatest basketball player?
-                        </label>
-                        <div className="input-group">
-                        <input
-                            id="greatestPlayerInput"
-                            type="text"
-                            value={basketballInput}
-                            onChange={(e) => setBasketballInput(e.target.value)}
-                            placeholder="Type a name..."
-                            className="le-input"
-                            onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                                handleSend();
-                            }
-                            }}
-                        />
-                        <button
-                            onClick={handleSend}
-                            className="send-button"
-                        >
-                            Send
-                        </button>
-                        </div>
-                    </div>
-                    </div>
                 </div>
+                
             </div>
-        </div>
         
         </>
           
