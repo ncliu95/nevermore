@@ -19,11 +19,9 @@ function Will() {
 
     return (
         <>
-        <div className="page-content">
            
             
             <div className="row-full">
-                    <div className="outerBox">
                     
                     <div className="innerBox">
                     
@@ -51,16 +49,16 @@ function Will() {
                                 Send
                             </button>
                         </div>
-                    </div>
+                        
                     </div>
                     {messages.map((msg, index) => (
                         <div key={index} className="chat-message">
                         {msg}
                         </div>
                     ))}
+                    
                 </div>
                 
-            </div>
         
         </>
           
