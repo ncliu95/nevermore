@@ -43,11 +43,11 @@
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
-  justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   overflow-y: auto;
   height: calc(100vh - 180px);
   padding: 20px;
+  padding-top: 140px;
 }
 
 .row-will {
@@ -55,6 +55,10 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+}
+
+.chat-message:first-child {
+  margin-top: auto;
 }
 
 .chat-message {
