@@ -9,7 +9,14 @@ function Will() {
     const [messages, setMessages] = useState([]);
   
     
-    
+    useEffect(() => {
+    const box = document.querySelector('.textsBox');
+    if (box) {
+        box.scrollTop = box.scrollHeight;
+        }
+    }, [messages]);
+
+
     const handleSend = () => {
     if (basketballInput.trim() !== '') {
       setMessages([...messages, basketballInput.trim()]);
@@ -21,7 +28,7 @@ function Will() {
         <>
            
             
-            <div className="row-full">
+            <div className="row-will">
                     
                     <div className="innerBox">
                     
@@ -51,12 +58,14 @@ function Will() {
                         </div>
                         
                     </div>
+                    <div className="textsBox">
                     {messages.map((msg, index) => (
                         <div key={index} className="chat-message">
                         {msg}
                         </div>
                     ))}
-                    
+                    </div>
+                    <div className="chat-spacer"></div>
                 </div>
                 
         
