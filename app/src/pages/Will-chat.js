@@ -64,8 +64,9 @@ function Will() {
                         {msg}
                         </div>
                     ))}
-                    </div>
                     <div className="chat-spacer"></div>
+                    </div>
+                    
                 </div>
                 
         
