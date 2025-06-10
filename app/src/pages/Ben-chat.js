@@ -6,7 +6,7 @@ function Ben() {
 
   const [note, setNote] = useState('');
   const [notes, setNotes] = useState([]);
-
+  const dummy = useRef();
   const submit_function = (e) => {
     if (note.trim() === '') return;
     setNotes([...notes, note]);  
@@ -15,7 +15,7 @@ function Ben() {
     dummy.current.scrollIntoView({behavior: 'instant', block: "end"})
   };
 
-  const dummy = useRef();
+  
 
   
   
