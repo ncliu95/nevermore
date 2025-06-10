@@ -29,6 +29,7 @@ function Ben() {
                 ))
               )}
             </div></div>
+            <div></div>
             <div className="input-div">
               <input
                 className="chat-input"
