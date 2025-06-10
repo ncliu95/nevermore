@@ -48,7 +48,6 @@
   overflow-y: auto;
   height: calc(100vh - 180px);
   padding: 20px;
-  padding-bottom: 120px;
 }
 
 .row-will {
