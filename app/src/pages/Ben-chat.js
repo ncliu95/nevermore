@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../App.css';
 import '../cssFiles/Ben.css'
 
@@ -11,13 +11,16 @@ function Ben() {
     if (note.trim() === '') return;
     setNotes([...notes, note]);  
     setNote(''); 
+
+    dummy.current.scrollIntoView({behavior: 'instant', block: "end"})
   };
+
+  const dummy = useRef();
 
   
   
   return (          
-          <div>
-            <div>
+          <div className="parent">
           <div className="chat-area">
               {notes.length === 0 ? (
                 <p className="chat-text">Ask Anything.</p>
@@ -28,8 +31,9 @@ function Ben() {
                   </div>
                 ))
               )}
-            </div></div>
-            <div></div>
+          </div>
+          <div ref={dummy} className="dummy"></div>
+            
             <div className="input-div">
               <input
                 className="chat-input"
