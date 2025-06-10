@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
+import '../cssFiles/Ben.css'
 
 function Ben() {
 
@@ -16,6 +17,7 @@ function Ben() {
   
   return (          
           <div>
+            <div>
           <div className="chat-area">
               {notes.length === 0 ? (
                 <p className="chat-text">Ask Anything.</p>
@@ -26,7 +28,7 @@ function Ben() {
                   </div>
                 ))
               )}
-            </div>
+            </div></div>
             <div className="input-div">
               <input
                 className="chat-input"
