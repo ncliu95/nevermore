@@ -32,7 +32,7 @@
 }
 
 .chat-spacer {
-  height: 120px;
+  height: 130px;
   flex-shrink: 0;
   width: 100%;
   background-color: #282c34;
@@ -64,6 +64,9 @@
 .chat-message {
   left: 10%;
   background-color: 	#4d4d4d;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 80%;
   color: white;
   border-radius: 8px;
   padding: 10px;
