@@ -9,7 +9,7 @@
 
 .row{
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-left: 150px;
   margin-right: 150px;
   align-items: center;
@@ -309,6 +309,14 @@ transform: scaleX(1);
   transform: translateY(0);
 }
 
+.colors{
+  color: '#fff';
+  padding: 'px';
+  border-radius: '8px';
+  width: '50px';
+  text-align: 'center';
+  font-size: 8px;
+}
 
 
 

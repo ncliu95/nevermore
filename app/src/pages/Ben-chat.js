@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef} from 'react';
 import '../App.css';
 import '../cssFiles/Ben.css'
 
@@ -15,7 +15,6 @@ function Ben() {
     dummy.current.scrollIntoView({behavior: 'instant', block: "end"})
   };
 
-  
 
   
   
