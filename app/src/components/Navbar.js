@@ -19,6 +19,9 @@ const Navbar = () => {
     const imagenav = () => {
     navigate("/images");
   };
+    const willapinav = () => {
+    navigate("/willapi");
+  }
   return (
     <div className='navBar'>
 
@@ -27,6 +30,7 @@ const Navbar = () => {
                 <div class="header-button" onClick={bennav}>Ben's Page</div>
                 <div class="header-button" onClick={willnav}>Will's Page</div>
                 <div class="header-button"onClick={imagenav}>Images</div>
+                <div class="header-button" onClick={willapinav}>WillApi</div>
                 </div> 
     </div>
   );

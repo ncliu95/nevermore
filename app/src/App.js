@@ -8,6 +8,8 @@ import Images from './pages/Images';
 
 import Navbar from './components/Navbar';
 
+import WillApi from './components/WillApi';
+
 function App() {  
 
 
@@ -20,6 +22,7 @@ function App() {
           <Route path="/images" element={<Images />} />
           <Route path="/will" element={<Will />} />
           <Route path="/ben" element={<Ben />} />
+          <Route path="/willapi" element={<WillApi />} />
         </Routes>
         
     </Router>
