@@ -19,10 +19,13 @@ function WillApi() {
             {data.map((item, index) => (
             <li key={index}>
                 <h2 className='foodName'>{item.title}</h2>
-                <p className='foodCourse'>{item.course||'Course not specified'}</p>
+                <p className='foodCourse'>Course: {item.course||'Course not specified'}</p>
                 {item.photoUrl &&(
                 <img src={item.photoUrl} alt={null} style={{ width: '200px' }} />
                 )}
+                <a href = {item.source} target="_blank" rel="noopener noreferrer">
+                <button type="button" >Click me for the Source!</button>
+                </a>
             </li>
             ))}
         </ul>
