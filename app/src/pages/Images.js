@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import '../App.css';
+import '../cssFiles/Images.css';
 
 function Images() {
       const [animal, setAnimal] = useState("cats");
