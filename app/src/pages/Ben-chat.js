@@ -1,6 +1,5 @@
 import React, { useState, useRef} from 'react';
-import '../App.css';
-import '../cssFiles/Ben.css'
+import '../cssFiles/Ben-chat.css'
 
 function Ben() {
 
