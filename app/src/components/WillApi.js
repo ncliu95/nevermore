@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Will from '../pages/Will-chat';
+import '../cssFiles/WillApi.css'
 
 function WillApi() {
   const [data, setData] = useState([]);
@@ -17,9 +18,11 @@ function WillApi() {
         <ul>
             {data.map((item, index) => (
             <li key={index}>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <img src={item.image} alt={item.title} style={{ width: '200px' }} />
+                <h2 className='foodName'>{item.title}</h2>
+                <p className='foodCourse'>{item.course||'Course not specified'}</p>
+                {item.photoUrl &&(
+                <img src={item.photoUrl} alt={null} style={{ width: '200px' }} />
+                )}
             </li>
             ))}
         </ul>
