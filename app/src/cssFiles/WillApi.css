@@ -1,7 +1,43 @@
-.foodName{
-    color: #0067dc;
+.foodCourse{
+    color: #a7bade;
 }
 
-.foodCourse{
-    color: #ff0000;
+.foodName{
+    color: #446fc5;
+}
+
+.foodButton{
+    background-color: #454f7d;
+    color: white;
+    border: rgb(201, 199, 199) 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 20vh;
+    height: 3vh;
+}
+
+.timeToCook{
+    color: #c5c5c5;
+}
+
+.foodContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2vh;
+    border: black 3px solid;
+}
+
+.foodImage{
+    max-width: 20vh;
+    max-height: 20vh;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.foodRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }

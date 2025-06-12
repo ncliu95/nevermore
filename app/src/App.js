@@ -8,7 +8,7 @@ import Images from './pages/Images';
 
 import Navbar from './components/Navbar';
 
-import WillApi from './components/WillApi';
+import WillApi from './pages/WillApi';
 
 function App() {  
 
