@@ -84,40 +84,42 @@ function Images() {
 
 
 <div className="row">
+  <div className='jokeBoxBox'>
  <h2 className="joke-text">Submit a Joke</h2>
       <input
         type="text"
         placeholder="Type"
         value={type}
         onChange={(e) => settype(e.target.value)}
-      /><br /><br />
+      />
 
       <input
         type="text"
         placeholder="Setup"
         value={setup}
         onChange={(e) => setSetup(e.target.value)}
-      /><br /><br />
+      />
 
       <input
         type="text"
         placeholder="Punchline"
         value={punchline}
         onChange={(e) => setPunchline(e.target.value)}
-      /><br /><br />
+      />
 
       <button onClick={handlePost}>Submit Joke</button>
 
+      
       <h3 className='joke-text'>Submitted Jokes</h3>
         {jokes.map((joke, index) => (
-          <li key={index} className='joke-item'>
+          <div key={index} className='joke-item'>
             <div className='jokeBox'>
-            <p className='joke-text'>Type: {joke.type}</p> 
             <p className='joke-text'>Setup: {joke.setup}</p> 
             <p className='joke-text'>Punchline: {joke.punchline}</p> 
             </div>
-          </li>
+          </div>
         ))}
+        </div>
 </div>
 
 

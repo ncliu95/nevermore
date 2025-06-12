@@ -24,8 +24,12 @@
 }
 
 .jokeBox{
-  border: #ffffff 2px solid;
+  border: #0e1c37 2px solid;
   width: 20vh;
+}
+
+.jokeBoxBox{
+    border: #000000 5px solid;
 }
 
 .App-bron-text {

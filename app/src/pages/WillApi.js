@@ -42,7 +42,7 @@ function WillApi() {
         <h1>Will's API Data</h1>
         <ul>
             {data.map((item, index) => (
-            <li key={index}>
+            <div key={index}>
                 <div className= 'foodContainer'>
                     <div className='foodLeft'>
                         <h2 className='foodName'>{item.title}</h2>
@@ -58,7 +58,7 @@ function WillApi() {
                         </a>
                     </div>
                 </div>
-            </li>
+            </div>
             ))}
         </ul>
     </div>
