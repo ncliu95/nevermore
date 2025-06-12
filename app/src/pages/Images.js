@@ -16,6 +16,44 @@ function Images() {
         setDisplayText('most people');
         }
         }, [inputValue]);
+
+
+
+
+
+
+  const [type, settype] = useState('');
+  const [setup, setSetup] = useState('');
+  const [punchline, setPunchline] = useState('');
+  const [jokes, setJokes] = useState([]);
+
+  useEffect(() => {
+    fetchJokes();
+  }, []);
+
+  const fetchJokes = async () => {
+    const res = await fetch('https://api.sampleapis.com/jokes/goodJokes');
+    const data = await res.json();
+    const sortedData = data.slice(-3);
+    setJokes(sortedData);
+  };
+
+  const handlePost = async () => {
+    const res = await fetch('https://api.sampleapis.com/jokes/goodJokes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ type, setup, punchline })
+    });
+
+    if (res.ok) {
+      settype('');
+      setSetup('');
+      setPunchline('');
+      fetchJokes(); 
+    }
+  };
   return (
     <div className="page-content">
      <div className="container">
@@ -42,6 +80,49 @@ function Images() {
         placeholder="Type your favorite animal!">
         </input>
         </div>
+
+
+
+<div className="row">
+ <h2 className="joke-text">Submit a Joke</h2>
+      <input
+        type="text"
+        placeholder="Type"
+        value={type}
+        onChange={(e) => settype(e.target.value)}
+      /><br /><br />
+
+      <input
+        type="text"
+        placeholder="Setup"
+        value={setup}
+        onChange={(e) => setSetup(e.target.value)}
+      /><br /><br />
+
+      <input
+        type="text"
+        placeholder="Punchline"
+        value={punchline}
+        onChange={(e) => setPunchline(e.target.value)}
+      /><br /><br />
+
+      <button onClick={handlePost}>Submit Joke</button>
+
+      <h3 className='joke-text'>Submitted Jokes</h3>
+        {jokes.map((joke, index) => (
+          <li key={index} className='joke-item'>
+            <div className='jokeBox'>
+            <p className='joke-text'>Type: {joke.type}</p> 
+            <p className='joke-text'>Setup: {joke.setup}</p> 
+            <p className='joke-text'>Punchline: {joke.punchline}</p> 
+            </div>
+          </li>
+        ))}
+</div>
+
+
+
+
          <div className="row">
             <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
             <p className="App-bron-text">
