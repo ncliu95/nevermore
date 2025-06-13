@@ -1,87 +1,32 @@
 import {useState,useEffect} from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Will from './pages/Will-chat';
+import Ben from './pages/Ben-chat';
+import Images from './pages/Images';
+
+import Navbar from './components/Navbar';
+
+function App() {  
 
 
-
-function App() {
-
-  const [inputValue, setInputValue ] = useState('');
-  const [displayText, setDisplayText] = useState('most people');
-
-  useEffect(() => {
-    if (inputValue.trim()!==''){
-      setDisplayText(inputValue);
-    }
-    if(inputValue.trim()===''){
-      setDisplayText('most people');
-    }
-  }, [inputValue]);
-  
-
-  const [animal, setAnimal] = useState("cats");
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="container">
-          <div className="row">
-            <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
-
-            <p>
-              Lebron James is&nbsp;
-              <span
-              className="yellow"
-              style={{ color: '#ffff00' }}>
-                faster&nbsp;
-              </span>
-              <span id="Letext">than {displayText}</span> 
-            </p>
-
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Who is the fastest person you know?"
-              size ="34"
-            />
-            <a
-              className="App-link-will"
-              href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#ffffff' }}
-            >
-              More about LeBron James
-            </a>
-          </div>
-        <div className="row">
-          <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
-        <h1 className="text">
-          We love {animal}!
-        </h1>
-        <a
-          className="App-link"
-          href="https://en.wikipedia.org/wiki/Tabby_cat"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Click for more cats!
-
-        </a>
-        <input Add commentMore actions
-        id="input"
-        type="text" 
-        value={animal} 
-        onChange={(e) => setAnimal(e.target.value)}
-        placeholder="Type your favorite animal!">
-        </input>
-        </div>
+    <header className="App-header">
+    <Router>
+      <Navbar />
+        <Routes>
+          <Route path="/images" element={<Images />} />
+          <Route path="/will" element={<Will />} />
+          <Route path="/ben" element={<Ben />} />
+        </Routes>
         
-        </div>
-      </header>
-    </div>
+    </Router>
+        
+  
+    </header>
+      </div>
   );
 }
-
-
-
 export default App;
