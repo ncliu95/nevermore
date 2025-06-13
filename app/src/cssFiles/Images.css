@@ -1,52 +1,4 @@
-.App-bron {
-  height: 35vmin;
-  position: relative;
-}
-
-
-.cat-img {
-  height: 30vmin;
-  position: relative;
-  top: -50px;
-  pointer-events: none;
-}
-
-.le-input {
-  flex: 1;
-  padding: 6px;
-  font-size: 14px;
-}
-
-.joke-text {
-  font-size: 20px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.jokeBox{
-  border: #0e1c37 2px solid;
-  width: 20vh;
-}
-
-.jokeBoxBox{
-    border: #000000 5px solid;
-}
-
-.App-bron-text {
-  font-size: 24px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.text {
-  color: white;
-  animation: color-change 5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-
 .input{
-
   field-sizing: fixed;
   background-color: #282c34;
   border: none;
@@ -61,7 +13,48 @@
   color:white;
 }
 
-@keyframes App-logo-spin {
+.catImg {
+  height: 30vmin;
+  position: relative;
+  top: -50px;
+  pointer-events: none;
+}
+
+.catText {
+  color: white;
+  animation: colorChange 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.jokeText {
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.jokeBox{
+  border: #0e1c37 2px solid;
+  width: 20vh;
+}
+
+.jokeBoxBox{
+    border: #000000 5px solid;
+}
+
+.leBronImage {
+  height: 35vmin;
+  position: relative;
+}
+
+.leBronText {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+@keyframes catImgSpin {
   from {
     transform: rotate(0deg);
   }
@@ -70,7 +63,7 @@
   }
 }
 
-@keyframes App-bron-move {
+@keyframes leBronImage-move {
   from {
     transform: translateX(-50%);
   }
@@ -79,9 +72,7 @@
   }
 }
 
-
-
-@keyframes color-change {
+@keyframes colorChange {
   0%, 16% {
     color: blue;
   }
@@ -103,10 +94,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-bron {
-    animation: App-bron-move infinite 2s alternate linear;
+  .leBronImage {
+    animation: leBronImage-move infinite 2s alternate linear;
   }
-  .cat-img {
-    animation: App-logo-spin infinite 20s linear;
+  .catImg {
+    animation: catImgSpin infinite 20s linear;
   }
 }

@@ -55,8 +55,8 @@ return (
   <div className="container">
 
     <div className="row">
-      <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
-      <h1 className="text">We love {animal}!</h1>
+      <img src={'./assets/cat.jpeg'} className="catImg" alt="logo" />
+      <h1 className="catText">We love {animal}!</h1>
       
       <a
       className="App-link"
@@ -78,7 +78,7 @@ return (
 
     <div className="row">
       <div className='jokeBoxBox'>
-        <h2 className="joke-text">Submit a Joke</h2>
+        <h2 className="jokeText">Submit a Joke</h2>
         <input
         type="text"
         placeholder="Type"
@@ -102,13 +102,13 @@ return (
 
         <button onClick={handlePost}>Submit Joke</button>
 
-        <h3 className='joke-text'>Submitted Jokes</h3>
+        <h3 className='jokeText'>Submitted Jokes</h3>
       
         {jokes.map((joke, index) => (
         <div key={index} className='joke-item'>
           <div className='jokeBox'>
-          <p className='joke-text'>Setup: {joke.setup}</p> 
-          <p className='joke-text'>Punchline: {joke.punchline}</p> 
+          <p className='jokeText'>Setup: {joke.setup}</p> 
+          <p className='jokeText'>Punchline: {joke.punchline}</p> 
           </div>
         </div>
         ))}
@@ -116,9 +116,9 @@ return (
     </div>
 
     <div className="row">
-      <img src={"/assets/goat.jpeg"} className="App-bron" alt="Lebron James" />
+      <img src={"/assets/goat.jpeg"} className="leBronImage" alt="Lebron James" />
       
-      <p className="App-bron-text">
+      <p className="leBronText">
       Lebron James is&nbsp;
       <span
       style={{ color: '#ffff00' }}>
@@ -135,7 +135,7 @@ return (
       >
       More about LeBron James
       </a>
-      
+
       <input
       className='input'
       type="text"
