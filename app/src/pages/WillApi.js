@@ -8,20 +8,21 @@ useEffect(() => {
 fetch('https://api.sampleapis.com/recipes/recipes')
 .then(res => res.json())
 .then(json => {
+
 const priority = {
-'Main Course': 1,
-'Side Course': 2,
-'Breakfast': 3,
-'Desserts': 4,
-'Lunch': 5,
-'Side Dishes': 6,
-'Soup': 7,
-'Course not specified': 8,
+  'Main Course': 1,
+  'Side Course': 2,
+  'Breakfast': 3,
+  'Desserts': 4,
+  'Lunch': 5,
+  'Side Dishes': 6,
+  'Soup': 7,
+  'Course not specified': 9,
 };
 
 const sortedData = json.sort((a, b) => {
-const aPriority = priority[a.course] || 999;
-const bPriority = priority[b.course] || 999;
+const aPriority = priority[a.course] || 8;
+const bPriority = priority[b.course] || 8;
 
 if (aPriority === bPriority) {
 return (a.course || '').localeCompare(b.course || '');
@@ -51,7 +52,7 @@ return (
 
         <div className='foodRight'>
           {item.photoUrl &&(
-          <img src={item.photoUrl} alt={null} className='foodImage'/>
+          <img src={item.photoUrl} alt='' className='foodImage'/>
           )}
           <a href = {item.source} target="_blank" rel="noopener noreferrer">
           <button type="button" className='foodButton' >Click me for the Source!</button>
