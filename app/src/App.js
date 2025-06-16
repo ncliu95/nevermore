@@ -7,7 +7,7 @@ import Images from './pages/Images';
 import Home from './pages/Home';
 
 import Navbar from './components/Navbar';
-
+import BenAPI from './pages/BenAPI';
 import WillApi from './pages/Will/WillApi';
 
 function App() {  
