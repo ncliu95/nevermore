@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Will from './pages/Will/Will-chat';
-import Ben from './pages/Ben-chat';
+import Ben from './pages/BenChat';
 import Images from './pages/Images';
 import Home from './pages/Home';
 
@@ -25,6 +25,7 @@ function App() {
           <Route path="/will" element={<Will />} />
           <Route path="/ben" element={<Ben />} />
           <Route path="/willapi" element={<WillApi />} />
+          <Route path="/BenAPI" element={<BenAPI />} />
         </Routes>
         
     </Router>

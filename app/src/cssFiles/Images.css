@@ -1,4 +1,70 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.page-content {
+  padding-top: 240px;
+  width:100%;
+}
+
+.App-link {
+  color: #ffffff;
+  position: relative;
+}
+
+.App-link:hover {
+  color: rgb(0, 165, 206);
+  transition: color 0.3s;
+}
+
+.App-bron {
+  height: 35vmin;
+  position: relative;
+}
+
+
+.cat-img {
+  height: 30vmin;
+  position: relative;
+  top: -50px;
+  pointer-events: none;
+}
+
+.le-input {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.App-bron-text {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: white;
+  animation: color-change 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
 .input{
+
   field-sizing: fixed;
   background-color: #282c34;
   border: none;
@@ -13,48 +79,7 @@
   color:white;
 }
 
-.catImg {
-  height: 30vmin;
-  position: relative;
-  top: -50px;
-  pointer-events: none;
-}
-
-.catText {
-  color: white;
-  animation: colorChange 5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-
-.jokeText {
-  font-size: 20px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.jokeBox{
-  border: #0e1c37 2px solid;
-  width: 20vh;
-}
-
-.jokeBoxBox{
-    border: #000000 5px solid;
-}
-
-.leBronImage {
-  height: 35vmin;
-  position: relative;
-}
-
-.leBronText {
-  font-size: 24px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-
-@keyframes catImgSpin {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -63,7 +88,7 @@
   }
 }
 
-@keyframes leBronImage-move {
+@keyframes App-bron-move {
   from {
     transform: translateX(-50%);
   }
@@ -72,7 +97,9 @@
   }
 }
 
-@keyframes colorChange {
+
+
+@keyframes color-change {
   0%, 16% {
     color: blue;
   }
@@ -94,10 +121,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .leBronImage {
-    animation: leBronImage-move infinite 2s alternate linear;
+  .App-bron {
+    animation: App-bron-move infinite 2s alternate linear;
   }
-  .catImg {
-    animation: catImgSpin infinite 20s linear;
+  .cat-img {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
