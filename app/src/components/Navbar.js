@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
 import '../cssFiles/navBar.css';
 
 const Navbar = () => {
@@ -25,13 +25,15 @@ const Navbar = () => {
     setPage('Images');
   };
 
-    const benapinav = () => {
+    const ben_apinav = () => {
     navigate("/BenAPI");
     setPage('Ben\'s API');
   };
-    const willapinav = () => {
-    navigate("/willapi");
-  }
+
+  const will_apinav = () => {
+    navigate("/WillApi");
+    setPage('Will\'s API');
+  };
   return (
     <div className='navBar'>
 
@@ -42,8 +44,8 @@ const Navbar = () => {
         <div  onClick={bennav} className="dropdown-options">Ben's Page</div>
         <div  onClick={willnav} className="dropdown-options">Will's Page</div>
         <div onClick={imagenav} className="dropdown-options">Images</div>
-        <div onClick={benapinav} className="dropdown-options">Ben's API</div>
-        <div onClick={willapinav} className="dropdown-options">Will's API</div>
+        <div onClick={ben_apinav} className="dropdown-options">Ben's API</div>
+        <div onClick={will_apinav} className="dropdown-options">Will's API</div>
       </div>
     </div>
 
@@ -52,4 +54,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
