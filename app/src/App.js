@@ -1,10 +1,10 @@
-import {useState,useEffect} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Will from './pages/Will-chat';
-import Ben from './pages/Ben-chat';
+import Ben from './pages/BenChat';
 import Images from './pages/Images';
+import BenAPI from './pages/BenAPI';
 
 import Navbar from './components/Navbar';
 
@@ -20,6 +20,7 @@ function App() {
           <Route path="/images" element={<Images />} />
           <Route path="/will" element={<Will />} />
           <Route path="/ben" element={<Ben />} />
+          <Route path="/BenAPI" element={<BenAPI />} />
         </Routes>
         
     </Router>
