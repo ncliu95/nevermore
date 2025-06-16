@@ -1,3 +1,22 @@
+
+.container{
+
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+}
+
+.row{
+  display:flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-right: 150px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
 .App {
   text-align: center;
 }
@@ -43,29 +62,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 140px;
+  height: 100px;
   width: 100%;
   background-color: #222;
   padding: 0;
   margin: 0;
   z-index: 5;
-}
-
-.navList {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 
-.navList li a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-weight: bold;
-}
 
-.navList li a:hover {
-  color: yellow;
-}
 
 .page-content {
   padding-top: 240px;
@@ -79,5 +88,4 @@
   margin-right: 150px;
   align-items: center;
   justify-content: flex-start;
-
 }
