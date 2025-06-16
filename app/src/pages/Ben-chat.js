@@ -1,5 +1,6 @@
 import '../App.css';
 import '../cssFiles/Ben.css'
+import React, { useState, useRef } from 'react';
 
 function Ben() {
 
@@ -47,7 +48,7 @@ function Ben() {
                 }}
               />
               <div onClick={submit_function} className="chat-button">
-              <img src='assets/arrow.png' className="arrow"></img>
+              <img src='assets/arrow.png' className="arrow" alt='arrow'></img>
               </div>
             </div>
     </div>

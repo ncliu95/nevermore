@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .home-header-middle{
     width: 50%;
@@ -38,5 +39,7 @@
 .home-image{
     height: auto;
     max-width: 80%;
-    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
