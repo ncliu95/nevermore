@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Will from './pages/Will-chat';
-import Ben from './pages/Ben-chat';
+import Ben from './pages/BenChat';
 import Images from './pages/Images';
 import BenAPI from './pages/BenAPI';
 
