@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../cssFiles/WillApi.css'
+import '../../cssFiles/WillApi.css'
 
 function WillApi() {
 const [data, setData] = useState([]);

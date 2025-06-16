@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
-import '../cssFiles/Will-chat.css';
+import '../../App.css';
+import '../../cssFiles/Will-chat.css';
 
 function Will() {
 const [basketballInput, setBasketballInput] = useState('');
