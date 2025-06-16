@@ -12,8 +12,8 @@
     border: rgb(201, 199, 199) 1px solid;
     border-radius: 6px;
     cursor: pointer;
-    width: 20vh;
-    height: 3vh;
+    width: auto;
+    height: auto;
 }
 
 .timeToCook{
@@ -28,9 +28,6 @@
     margin: 2vh;
     border: black 3px solid;
 }
-
-
-
 
 .foodImage{
     max-width: 20vh;

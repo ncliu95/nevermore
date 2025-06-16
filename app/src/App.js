@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Will from './pages/Will/Will-chat';
 import Ben from './pages/Ben-chat';
 import Images from './pages/Images';
+import Home from './pages/Home';
 
 import Navbar from './components/Navbar';
 
@@ -18,6 +19,8 @@ function App() {
     <Router>
       <Navbar />
         <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/images" element={<Images />} />
           <Route path="/will" element={<Will />} />
           <Route path="/ben" element={<Ben />} />

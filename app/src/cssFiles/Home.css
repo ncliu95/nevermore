@@ -1,0 +1,42 @@
+.Home{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.about-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-header-left{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-header-right{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-header-middle{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image{
+    height: auto;
+    max-width: 80%;
+    object-fit: cover;
+}
