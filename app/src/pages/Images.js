@@ -54,7 +54,7 @@ return (
 <div className="page-content">
   <div className="container">
 
-    <div className="row">
+    <div className="rowa">
       <img src={'./assets/cat.jpeg'} className="catImg" alt="logo" />
       <h1 className="catText">We love {animal}!</h1>
       
@@ -76,7 +76,7 @@ return (
       </input>
     </div>
 
-    <div className="row">
+    <div className="rowa">
       <div className='jokeBoxBox'>
         <h2 className="jokeText">Submit a Joke</h2>
         <input
@@ -115,7 +115,7 @@ return (
       </div>
     </div>
 
-    <div className="row">
+    <div className="rowa">
       <img src={"/assets/goat.jpeg"} className="leBronImage" alt="Lebron James" />
       
       <p className="leBronText">

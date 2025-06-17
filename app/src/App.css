@@ -14,15 +14,14 @@
   color: #222;
 }
 
+.App-link {
+  color: #ffffff;
+  position: relative;
+}
 
-
-
-
-
-
-.page-content {
-  padding-top: 240px;
-  width:100%;
+.App-link:hover {
+  color: rgb(0, 165, 206);
+  transition: color 0.3s;
 }
 
 .row {

@@ -27,12 +27,12 @@ const Navbar = () => {
 
     const ben_apinav = () => {
     navigate("/BenAPI");
-    setPage('Ben\'s API');
+    setPage("Ben's API");
   };
 
   const will_apinav = () => {
     navigate("/WillApi");
-    setPage('Will\'s API');
+    setPage("Will's API");
   };
   return (
     <div className='navBar'>

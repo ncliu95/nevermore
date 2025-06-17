@@ -9,8 +9,27 @@
   margin-top: 20px;
 }
 
+.rowa {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  width: 20%;
+  justify-content: flex-start;
+}
+
 .input::placeholder{
   color:white;
+}
+
+.container{
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #282c34;
 }
 
 .catImg {
@@ -39,7 +58,16 @@
 }
 
 .jokeBoxBox{
-    border: #000000 5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #000000 5px solid;
+  width: auto;
+}
+
+.page-content {
+  padding-top: 240px;
+  width:100%;
 }
 
 .leBronImage {
