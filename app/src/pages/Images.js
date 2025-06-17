@@ -19,7 +19,9 @@ const data = await res.json();
 const sortedData = data.slice(-3);
 setJokes(sortedData);
 };
+
 const handlePost = async () => {
+
 const res = await fetch('https://api.sampleapis.com/jokes/goodJokes', {
 method: 'POST',
 headers: {
@@ -41,6 +43,7 @@ useEffect(() => {
 if (inputValue.trim()!==''){
 setDisplayText(inputValue);
 }
+
 if(inputValue.trim()===''){
 setDisplayText('most people');
 }
@@ -53,98 +56,100 @@ fetchJokes();
 return (
 <div className="page-content">
   <div className="container">
-
     <div className="rowa">
       <img src={'./assets/cat.jpeg'} className="catImg" alt="logo" />
+
       <h1 className="catText">We love {animal}!</h1>
-      
+
       <a
-      className="App-link"
-      href="https://en.wikipedia.org/wiki/Tabby_cat"
-      target="_blank"
-      rel="noopener noreferrer"
+        className="App-link"
+        href="https://en.wikipedia.org/wiki/Tabby_cat"
+        target="_blank"
+        rel="noopener noreferrer"
       >
       Click for more cats!
       </a>
-      
+
       <input 
-      className='input'
-      type="text" 
-      value={animal} 
-      onChange={(e) => setAnimal(e.target.value)}
-      placeholder="Type your favorite animal!">
+        className='input'
+        type="text" 
+        value={animal} 
+        onChange={(e) => setAnimal(e.target.value)}
+        placeholder="Type your favorite animal!">
       </input>
     </div>
 
     <div className="rowa">
       <div className='jokeBoxBox'>
         <h2 className="jokeText">Submit a Joke</h2>
+
         <input
-        type="text"
-        placeholder="Type"
-        value={type}
-        onChange={(e) => settype(e.target.value)}
+          type="text"
+          placeholder="Type"
+          value={type}
+          onChange={(e) => settype(e.target.value)}
         />
 
         <input
-        type="text"
-        placeholder="Setup"
-        value={setup}
-        onChange={(e) => setSetup(e.target.value)}
+          type="text"
+          placeholder="Setup"
+          value={setup}
+          onChange={(e) => setSetup(e.target.value)}
         />
 
         <input
-        type="text"
-        placeholder="Punchline"
-        value={punchline}
-        onChange={(e) => setPunchline(e.target.value)}
+          type="text"
+          placeholder="Punchline"
+          value={punchline}
+          onChange={(e) => setPunchline(e.target.value)}
         />
 
         <button onClick={handlePost}>Submit Joke</button>
 
         <h3 className='jokeText'>Submitted Jokes</h3>
-      
+
         {jokes.map((joke, index) => (
-        <div key={index} className='joke-item'>
-          <div className='jokeBox'>
-          <p className='jokeText'>Setup: {joke.setup}</p> 
-          <p className='jokeText'>Punchline: {joke.punchline}</p> 
+          <div key={index} className='joke-item'>
+            <div className='jokeBox'>
+              <p className='jokeText'>Setup: {joke.setup}</p> 
+              <p className='jokeText'>Punchline: {joke.punchline}</p> 
+            </div>
           </div>
-        </div>
         ))}
+
       </div>
     </div>
 
     <div className="rowa">
       <img src={"/assets/goat.jpeg"} className="leBronImage" alt="Lebron James" />
-      
+
       <p className="leBronText">
       Lebron James is&nbsp;
       <span
-      style={{ color: '#ffff00' }}>
+        style={{ color: '#ffff00' }}>
         faster&nbsp;
       </span>
+
       <span id="Letext">than {displayText}</span> 
       </p>
 
       <a
-      className="App-link"
-      href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
-      target="_blank"
-      rel="noopener noreferrer"
+        className="App-link"
+        href="https://www.espn.com/nba/player/_/id/1966/lebron-james"
+        target="_blank"
+        rel="noopener noreferrer"
       >
       More about LeBron James
       </a>
 
       <input
-      className='input'
-      type="text"
-      value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
-      placeholder="Who is the fastest person you know?"
-      size ="34"
+        className='input'
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Who is the fastest person you know?"
+        size ="34"
       />
-
     </div>
   </div>
 </div>
