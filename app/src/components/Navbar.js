@@ -31,14 +31,22 @@ const Navbar = () => {
   return (
     <div className='navBar'>
 
+      <button className="home-button" onClick={homenav}>Home</button>
+
       <div className="dropdown">
-      <button className="dropdown-button">Pages ▾</button>
+      <button className="dropdown-button">Ben ▾</button>
       <div className="dropdown-content">
-        <div onClick={homenav} className="dropdown-options">Home</div>
         <div  onClick={bennav} className="dropdown-options">Ben's Page</div>
-        <div  onClick={willnav} className="dropdown-options">Will's Page</div>
         <div onClick={imagenav} className="dropdown-options">Images</div>
         <div onClick={ben_apinav} className="dropdown-options">Ben's API</div>
+      </div>
+    </div>
+
+      <div className="dropdown">
+      <button className="dropdown-button">Will ▾</button>
+      <div className="dropdown-content">
+        <div  onClick={willnav} className="dropdown-options">Will's Page</div>
+        <div onClick={imagenav} className="dropdown-options">Images</div>
       </div>
     </div>
 
