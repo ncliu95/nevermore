@@ -125,7 +125,7 @@
   .leBronImage {
     animation: leBronImage-move infinite 2s alternate linear;
   }
-  .catImg {
+  .cat-img {
     animation: catImgSpin infinite 20s linear;
   }
 }
