@@ -19,9 +19,14 @@ const Navbar = () => {
     navigate("/will");
     setPage('Will\'s Page');
   };
-    const imagenav = () => {
-    navigate("/images");
-    setPage('Images');
+    const benimagenav = () => {
+    navigate("/BenImages");
+    setPage('Ben\'s Images');
+  };
+
+  const willimagenav = () => {
+    navigate("/WillImages");
+    setPage('Will\'s Images');
   };
 
     const ben_apinav = () => {
@@ -37,7 +42,7 @@ const Navbar = () => {
       <button className="dropdown-button">Ben ▾</button>
       <div className="dropdown-content">
         <div  onClick={bennav} className="dropdown-options">Ben's Page</div>
-        <div onClick={imagenav} className="dropdown-options">Images</div>
+        <div onClick={benimagenav} className="dropdown-options">Images</div>
         <div onClick={ben_apinav} className="dropdown-options">Ben's API</div>
       </div>
     </div>
@@ -46,7 +51,7 @@ const Navbar = () => {
       <button className="dropdown-button">Will ▾</button>
       <div className="dropdown-content">
         <div  onClick={willnav} className="dropdown-options">Will's Page</div>
-        <div onClick={imagenav} className="dropdown-options">Images</div>
+        <div onClick={willimagenav} className="dropdown-options">Images</div>
       </div>
     </div>
 
