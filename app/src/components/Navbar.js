@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import {useState} from 'react';
+import { useState } from 'react';
+import '../cssFiles/navBar.css';
 
 const Navbar = () => {
 
@@ -31,7 +32,12 @@ const Navbar = () => {
 
     const ben_apinav = () => {
     navigate("/BenAPI");
-    setPage('Ben\'s API');
+    setPage("Ben's API");
+  };
+
+  const will_apinav = () => {
+    navigate("/WillApi");
+    setPage("Will's API");
   };
   return (
     <div className='navBar'>
@@ -44,6 +50,7 @@ const Navbar = () => {
         <div  onClick={bennav} className="dropdown-options">Ben's Page</div>
         <div onClick={benimagenav} className="dropdown-options">Images</div>
         <div onClick={ben_apinav} className="dropdown-options">Ben's API</div>
+      
       </div>
     </div>
 
@@ -52,6 +59,7 @@ const Navbar = () => {
       <div className="dropdown-content">
         <div  onClick={willnav} className="dropdown-options">Will's Page</div>
         <div onClick={willimagenav} className="dropdown-options">Images</div>
+        <div onClick={will_apinav} className="dropdown-options">Will's API</div>
       </div>
     </div>
 

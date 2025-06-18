@@ -1,70 +1,4 @@
-.row {
-  display: flex;
-  flex-direction: column;
-  margin-left: 150px;
-  margin-right: 150px;
-  align-items: center;
-  justify-content: flex-start;
-
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.page-content {
-  padding-top: 240px;
-  width:100%;
-}
-
-.App-link {
-  color: #ffffff;
-  position: relative;
-}
-
-.App-link:hover {
-  color: rgb(0, 165, 206);
-  transition: color 0.3s;
-}
-
-.App-bron {
-  height: 35vmin;
-  position: relative;
-}
-
-
-.cat-img {
-  height: 30vmin;
-  position: relative;
-  top: -50px;
-  pointer-events: none;
-}
-
-.le-input {
-  flex: 1;
-  padding: 6px;
-  font-size: 14px;
-}
-
-.App-bron-text {
-  font-size: 24px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.text {
-  color: white;
-  animation: color-change 5s;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-}
-
 .input{
-
   field-sizing: fixed;
   background-color: #282c34;
   border: none;
@@ -75,11 +9,80 @@
   margin-top: 20px;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  width: 20%;
+  justify-content: flex-start;
+}
+
 .input::placeholder{
   color:white;
 }
 
-@keyframes App-logo-spin {
+.container{
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #282c34;
+}
+
+.cat-img {
+  height: 30vmin;
+  position: relative;
+  top: -50px;
+  pointer-events: none;
+}
+
+.cat-text {
+  color: white;
+  animation: colorChange 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.jokeText {
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.jokeBox{
+  border: #0e1c37 2px solid;
+  width: 20vh;
+}
+
+.jokeBoxBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #000000 5px solid;
+  width: auto;
+}
+
+.page-content {
+  padding-top: 240px;
+  width:100%;
+}
+
+.leBronImage {
+  height: 35vmin;
+  position: relative;
+}
+
+.leBronText {
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+@keyframes catImgSpin {
   from {
     transform: rotate(0deg);
   }
@@ -88,7 +91,7 @@
   }
 }
 
-@keyframes App-bron-move {
+@keyframes leBronImage-move {
   from {
     transform: translateX(-50%);
   }
@@ -97,9 +100,7 @@
   }
 }
 
-
-
-@keyframes color-change {
+@keyframes colorChange {
   0%, 16% {
     color: blue;
   }
@@ -121,10 +122,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-bron {
-    animation: App-bron-move infinite 2s alternate linear;
+  .leBronImage {
+    animation: leBronImage-move infinite 2s alternate linear;
   }
   .cat-img {
-    animation: App-logo-spin infinite 20s linear;
+    animation: catImgSpin infinite 20s linear;
   }
 }

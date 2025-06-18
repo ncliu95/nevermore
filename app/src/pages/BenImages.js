@@ -10,7 +10,7 @@ function BenImages() {
           
         <div className="row">
           <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
-          <h1 className="text">
+          <h1 className="cat-text">
             We love {animal}!
           </h1>
           <a
