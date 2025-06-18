@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
-import Will from './pages/Will-chat';
+import Will from './pages/Will/Will-chat';
 import Ben from './pages/BenChat';
 
 import BenImages from './pages/BenImages';
@@ -13,7 +13,7 @@ import WillImages from './pages/WillImages';
 
 
 import BenAPI from './pages/BenAPI';
-import WillApi from './pages/WillApi';
+import WillApi from './pages/Will/WillApi';
 
 function App() {  
 

@@ -9,8 +9,6 @@
   margin: 0;
   z-index: 5;
   display: flex;
-  justify-content: space-between;
-  list-style-type: none;
   align-items: center;
 }
 
@@ -19,7 +17,7 @@
   display: inline-block;
   font-family: sans-serif;
   height: 100%;
-  margin-left:8%;
+  margin-left:4%;
 
 }
 

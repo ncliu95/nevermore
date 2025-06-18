@@ -9,7 +9,7 @@
   margin-top: 20px;
 }
 
-.rowa {
+.row {
   display: flex;
   flex-direction: column;
   margin-left: 5%;
@@ -32,14 +32,14 @@
   background-color: #282c34;
 }
 
-.catImg {
+.cat-img {
   height: 30vmin;
   position: relative;
   top: -50px;
   pointer-events: none;
 }
 
-.catText {
+.cat-text {
   color: white;
   animation: colorChange 5s;
   animation-timing-function: ease-in;
