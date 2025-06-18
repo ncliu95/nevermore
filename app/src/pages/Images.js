@@ -3,55 +3,55 @@ import '../App.css';
 import '../cssFiles/Images.css';
 
 function Images() {
-const [animal, setAnimal] = useState("cats");
+  const [animal, setAnimal] = useState("cats");
 
-const [inputValue, setInputValue ] = useState('');
-const [displayText, setDisplayText] = useState('most people');
+  const [inputValue, setInputValue ] = useState('');
+  const [displayText, setDisplayText] = useState('most people');
 
-const [type, settype] = useState('');
-const [setup, setSetup] = useState('');
-const [punchline, setPunchline] = useState('');
-const [jokes, setJokes] = useState([]);
+  const [type, settype] = useState('');
+  const [setup, setSetup] = useState('');
+  const [punchline, setPunchline] = useState('');
+  const [jokes, setJokes] = useState([]);
 
-const fetchJokes = async () => {
-const res = await fetch('https://api.sampleapis.com/jokes/goodJokes');
-const data = await res.json();
-const sortedData = data.slice(-3);
-setJokes(sortedData);
-};
+  const fetchJokes = async () => {
+    const res = await fetch('https://api.sampleapis.com/jokes/goodJokes');
+    const data = await res.json();
+    const sortedData = data.slice(-3);
+    setJokes(sortedData);
+  };
 
-const handlePost = async () => {
+  const handlePost = async () => {
 
-const res = await fetch('https://api.sampleapis.com/jokes/goodJokes', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({ type, setup, punchline })
-});
+  const res = await fetch('https://api.sampleapis.com/jokes/goodJokes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ type, setup, punchline })
+    });
 
-if (res.ok) {
-settype('');
-setSetup('');
-setPunchline('');
-fetchJokes(); 
-}
-};
+    if (res.ok) {
+      settype('');
+      setSetup('');
+      setPunchline('');
+      fetchJokes(); 
+      }
+  };
 
 
-useEffect(() => {
-if (inputValue.trim()!==''){
-setDisplayText(inputValue);
-}
+  useEffect(() => {
+    if (inputValue.trim()!==''){
+      setDisplayText(inputValue);
+    }
 
-if(inputValue.trim()===''){
-setDisplayText('most people');
-}
-}, [inputValue]);
+    if(inputValue.trim()===''){
+      setDisplayText('most people');
+    }
+  }, [inputValue]);
 
-useEffect(() => {
-fetchJokes();
-}, []);
+  useEffect(() => {
+    fetchJokes();
+  }, []);
 
 return (
 <div className="page-content">
