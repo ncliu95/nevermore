@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 const Navbar = () => {
 
@@ -19,9 +19,14 @@ const Navbar = () => {
     navigate("/will");
     setPage('Will\'s Page');
   };
-    const imagenav = () => {
-    navigate("/images");
-    setPage('Images');
+    const benimagenav = () => {
+    navigate("/BenImages");
+    setPage('Ben\'s Images');
+  };
+
+  const willimagenav = () => {
+    navigate("/WillImages");
+    setPage('Will\'s Images');
   };
 
     const ben_apinav = () => {
@@ -31,14 +36,22 @@ const Navbar = () => {
   return (
     <div className='navBar'>
 
+      <button className="home-button" onClick={homenav}>Home</button>
+
       <div className="dropdown">
-      <button className="dropdown-button">Pages ▾</button>
+      <button className="dropdown-button">Ben ▾</button>
       <div className="dropdown-content">
-        <div onClick={homenav} className="dropdown-options">Home</div>
         <div  onClick={bennav} className="dropdown-options">Ben's Page</div>
-        <div  onClick={willnav} className="dropdown-options">Will's Page</div>
-        <div onClick={imagenav} className="dropdown-options">Images</div>
+        <div onClick={benimagenav} className="dropdown-options">Images</div>
         <div onClick={ben_apinav} className="dropdown-options">Ben's API</div>
+      </div>
+    </div>
+
+      <div className="dropdown">
+      <button className="dropdown-button">Will ▾</button>
+      <div className="dropdown-content">
+        <div  onClick={willnav} className="dropdown-options">Will's Page</div>
+        <div onClick={willimagenav} className="dropdown-options">Images</div>
       </div>
     </div>
 
