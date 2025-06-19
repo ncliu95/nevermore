@@ -1,18 +1,15 @@
-import { useState } from 'react';
-import '../cssFiles/Images.css';
+import { useState } from "react";
+import "../../cssFiles/Images.css";
 
 function BenImages() {
   const [animal, setAnimal] = useState("cats");
 
   return (
     <div className="page-content">
-     <div className="container">
-          
+      <div className="container">
         <div className="row">
-          <img src={'./assets/cat.jpeg'} className="cat-img" alt="logo" />
-          <h1 className="cat-text">
-            We love {animal}!
-          </h1>
+          <img src={"./assets/cat.jpeg"} className="cat-img" alt="logo" />
+          <h1 className="cat-text">We love {animal}!</h1>
           <a
             className="App-link"
             href="https://en.wikipedia.org/wiki/Tabby_cat"
@@ -21,15 +18,16 @@ function BenImages() {
           >
             Click for more cats!
           </a>
-          <input 
+          <input
             className="input"
-            type="text" 
-            value={animal} 
+            type="text"
+            value={animal}
             onChange={(e) => setAnimal(e.target.value)}
-            placeholder="Type your favorite animal!">
-          </input>
+            placeholder="Type your favorite animal!"
+          ></input>
         </div>
-    </div></div>
+      </div>
+    </div>
   );
 }
 
