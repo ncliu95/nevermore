@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import httpx
 
-app = FastAPI()
 
 class RequestData(BaseModel):
     name: str
@@ -31,10 +30,8 @@ async def ben_filter(data: RequestName):
 
     colors = response.json()
     search_term = data.name.lower()
-
     filtered = [c for c in colors if search_term in c.get("name", "").lower()]
     
-
     return {'filtered': filtered}
 
 @app.post("/ben-add")
