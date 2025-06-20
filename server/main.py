@@ -15,7 +15,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
-@app.post("/will-post")
+@app.post("/will/post")
 async def will_post(data: RequestData):
     url = "https://api.sampleapis.com/jokes/goodJokes" 
 
