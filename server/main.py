@@ -1,16 +1,6 @@
 from app.core.application import app
-
-from fastapi import FastAPI
-from pydantic import BaseModel
+from app.models.request_models import RequestData, RequestName
 import httpx
-
-
-class RequestData(BaseModel):
-    name: str
-    color: str
-
-class RequestName(BaseModel):
-    name: str
 
 
 if __name__ == "__main__":
@@ -21,7 +11,7 @@ if __name__ == "__main__":
 def read_root():
     return {"message": "Welcome to the Nevermore API"}
 
-@app.post("/ben-filter")
+@app.post("/ben/filter")
 async def ben_filter(data: RequestName):
     url = "https://api.sampleapis.com/csscolornames/colors"
     async with httpx.AsyncClient(timeout=10) as client:
@@ -34,10 +24,9 @@ async def ben_filter(data: RequestName):
     
     return {'filtered': filtered}
 
-@app.post("/ben-add")
+@app.post("/ben/add")
 async def ben_add(data: RequestData):
     url = "https://api.sampleapis.com/csscolornames/colors" 
-
     async with httpx.AsyncClient() as client:
         response = await client.post(url, json={"name": data.name, "hex": data.color})
         response.raise_for_status() 
