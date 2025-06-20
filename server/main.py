@@ -2,14 +2,13 @@ from app.core.application import app
 from pydantic import BaseModel
 import httpx
 
+from app.models.request_models import RequestData
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Nevermore API"}
 
-class RequestData(BaseModel):
-    typeJoke: str
-    setup: str
-    punchline: str
+
 
 if __name__ == "__main__":
     import uvicorn
