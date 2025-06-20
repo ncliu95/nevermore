@@ -36,11 +36,10 @@ async def ben_filter(data: RequestName):
 
 @app.post("/ben-add")
 async def ben_add(data: RequestData):
-    external_api_url = "https://api.sampleapis.com/csscolornames/colors" 
-    print('#' + data.color)
+    url = "https://api.sampleapis.com/csscolornames/colors" 
 
     async with httpx.AsyncClient() as client:
-        response = await client.post(external_api_url, json={"name": data.name, "hex": data.color})
+        response = await client.post(url, json={"name": data.name, "hex": data.color})
         response.raise_for_status() 
 
     return response.json()
