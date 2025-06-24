@@ -18,3 +18,4 @@ def test_add():
     assert data["type"]== "general"
     assert data["setup"]== "test setup"
     assert data["punchline"] == "test punchline"
+    
