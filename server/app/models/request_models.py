@@ -1,7 +1,11 @@
-
 from pydantic import BaseModel
 
-class RequestData(BaseModel):
+class RequestJoke(BaseModel):
+    typeJoke: str
+    setup: str
+    punchline: str
+
+class RequestColor(BaseModel):
     name: str
     color: str
 

@@ -28,3 +28,15 @@ def test_filter():
     matches = response.json().get("filtered", [])
     for color in matches:
          assert "red" in color["name"].lower()
+
+def test_add_joke():
+    response = client.post("/will/post", json={"typeJoke": "general", "setup": "test setup", "punchline": "test punchline"})
+    assert response.status_code == 200
+    data = response.json()
+
+    assert "id" in data
+    assert isinstance(data["id"], str)
+    assert data["type"]== "general"
+    assert data["setup"]== "test setup"
+    assert data["punchline"] == "test punchline"
+    
