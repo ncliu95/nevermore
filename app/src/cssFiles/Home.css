@@ -2,6 +2,8 @@
     color: white;
     display: flex;
     flex-direction: column;
+    max-height: 100vh;
+    overflow-y: hidden;
 }
 
 .home-header{
@@ -9,20 +11,23 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 15vh;
+    height: 60vh;
 }
 
 .about-box{
+    margin-top: 2vh;
     display: flex;
     flex-direction: column;
+    height: 15vh;
+    gap: 1vh;
 }
 
-.home-header-left{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.about-box h4,.about-box p {
+  margin: 0;
+  line-height: 1.3;
 }
-.home-header-right{
+
+.home-header-right,.home-header-left{
     width: 30%;
     display: flex;
     justify-content: center;
@@ -30,7 +35,7 @@
     flex-direction: column;
 }
 .home-header-middle{
-    width: 50%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,8 +43,9 @@
 }
 
 .home-image{
-    height: auto;
-    max-width: 50%;
+
+    max-height: 100%;
+    max-width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
