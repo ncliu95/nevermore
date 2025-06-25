@@ -39,7 +39,7 @@
 
 .home-image{
     height: auto;
-    max-width: 80%;
+    max-width: 50%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
