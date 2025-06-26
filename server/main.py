@@ -1,10 +1,6 @@
 from app.core.application import app
-from pydantic import BaseModel
 import httpx
 from app.models.request_models import RequestJoke, RequestColor, RequestName
-
-
-
 
 if __name__ == "__main__":
     import uvicorn
