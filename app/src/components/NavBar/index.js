@@ -7,76 +7,48 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const homenav = () => {
-    navigate("/home");
-    setPage("Home");
-  };
-  const bennav = () => {
-    navigate("/ben");
-    setPage("Ben's Page");
-  };
-  const willnav = () => {
-    navigate("/will");
-    setPage("Will's Page");
-  };
-  const benimagenav = () => {
-    navigate("/BenImages");
-    setPage("Ben's Images");
-  };
+  const navItems = [
+  { label: 'Home', path: '/home', group: null },
+  { label: "Ben's Page", path: '/ben', group: 'Ben' },
+  { label: 'Images', path: '/BenImages', group: 'Ben' },
+  { label: "Ben's API", path: '/BenAPI', group: 'Ben' },
+  { label: "Will's Page", path: '/will', group: 'Will' },
+  { label: 'Images', path: '/WillImages', group: 'Will' },
+  { label: "Will's API", path: '/WillApi', group: 'Will' },
+];
 
-  const willimagenav = () => {
-    navigate("/WillImages");
-    setPage("Will's Images");
-  };
+const handleNav = (path, label) => {
+  navigate(path);
+  setPage(label);
+};
 
-  const ben_apinav = () => {
-    navigate("/BenAPI");
-    setPage("Ben's API");
-  };
+return (
+  <div className='navBar'>
+    <button className="home-button" onClick={() => handleNav('/home', 'Home')}>Home</button>
 
-  const will_apinav = () => {
-    navigate("/WillApi");
-    setPage("Will's API");
-  };
-  return (
-    <div className="navBar">
-      <button className="home-button" onClick={homenav}>
-        Home
-      </button>
-
-      <div className="dropdown">
-        <button className="dropdown-button">Ben ▾</button>
+    {['Ben', 'Will'].map((name) => (
+      <div className="dropdown" key={name}>
+        <button className="dropdown-button">{name} ▾</button>
         <div className="dropdown-content">
-          <div onClick={bennav} className="dropdown-options">
-            Ben's Page
-          </div>
-          <div onClick={benimagenav} className="dropdown-options">
-            Images
-          </div>
-          <div onClick={ben_apinav} className="dropdown-options">
-            Ben's API
-          </div>
+          {navItems
+            .filter(item => item.group === name)
+            .map(item => (
+              <div
+                key={item.path}
+                onClick={() => handleNav(item.path, item.label)}
+                className="dropdown-options"
+              >
+                {item.label}
+              </div>
+            ))}
         </div>
       </div>
+    ))}
 
-      <div className="dropdown">
-        <button className="dropdown-button">Will ▾</button>
-        <div className="dropdown-content">
-          <div onClick={willnav} className="dropdown-options">
-            Will's Page
-          </div>
-          <div onClick={willimagenav} className="dropdown-options">
-            Images
-          </div>
-          <div onClick={will_apinav} className="dropdown-options">
-            Will's API
-          </div>
-        </div>
-      </div>
+    <div className="page-title">{page}</div>
+  </div>
+);
 
-      <div className="page-title">{page}</div>
-    </div>
-  );
 };
 
 export default Navbar;
