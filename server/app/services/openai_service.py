@@ -17,7 +17,7 @@ user_prompt = "whats your name"
 def get_openai_response(user_prompt: str) -> str:
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",  # or gpt-4, gpt-3.5-turbo, etc.
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
