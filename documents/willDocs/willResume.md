@@ -2,7 +2,6 @@
 **Intended Major** Computer Science
 
 ✉️ wjbkoglin@gmail.com
-📞 281-569-9072
 
 ---
 

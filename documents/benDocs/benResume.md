@@ -2,7 +2,6 @@
 **Intended Major** Computer Science
 
 ✉️ benwang1515@gmail.com
-📞 713-884-7683
 
 ---
 
