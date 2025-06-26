@@ -5,8 +5,3 @@ class PromptRequest(BaseModel):
 
 class PromptResponse(BaseModel):
     response: str
-
-class RequestJoke(BaseModel):
-    typeJoke: str
-    setup: str
-    punchline: str
