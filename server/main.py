@@ -1,10 +1,22 @@
 from app.core.application import app
 import httpx
-from app.models.request_models import RequestJoke, RequestColor, RequestName
+from app.models.request_models import RequestJoke, RequestColor, RequestName, PromptRequest, PromptResponse
+from fastapi import HTTPException
+from BenOpenAI import get_openai_response
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+
+
+@app.post("/generate", response_model=PromptResponse)
+async def generate_response(request: PromptRequest):
+    try:
+        response_text = get_openai_response(request.prompt)
+        return PromptResponse(response=response_text)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/will/post")
 async def will_post(data: RequestJoke):
