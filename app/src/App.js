@@ -24,10 +24,10 @@ function App() {
 
             <Route path="/will" element={<Will />} />
             <Route path="/ben" element={<Ben />} />
-            <Route path="/willapi" element={<WillApi />} />
-            <Route path="/BenAPI" element={<BenAPI />} />
-            <Route path="/WillImages" element={<WillImages />} />
-            <Route path="/BenImages" element={<BenImages />} />
+            <Route path="/will/api" element={<WillApi />} />
+            <Route path="/ben/api" element={<BenAPI />} />
+            <Route path="/will/images" element={<WillImages />} />
+            <Route path="/ben/images" element={<BenImages />} />
           </Routes>
         </Router>
       </header>
