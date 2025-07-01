@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from app.models.request_models import PromptRequest, PromptResponse
 from fastapi import HTTPException
 from app.services.openai_service import get_openai_response
-from app.prompts.ai_personality_guidelines import WILL_PROMPT
+from app.prompts.prompts import WILL_PROMPT
 
 router = APIRouter()
 
