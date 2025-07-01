@@ -11,11 +11,11 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-user_prompt = "whats your name"
 
 def get_openai_response(user_prompt: str, system_prompt: str) -> str:
     try:
         response = client.chat.completions.create(
+            
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
