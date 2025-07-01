@@ -15,8 +15,7 @@ def get_hello_world():
 
 
 @router.post("/generate", response_model=PromptResponse)
-async def generate_response(request: PromptRequest):
-    system_prompt = BEN_PROMPT
+async def generate_response(request: PromptRequest,system_prompt = BEN_PROMPT):
 
     try:
         response_text = get_openai_response(request.prompt,system_prompt)

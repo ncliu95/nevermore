@@ -7,8 +7,7 @@ from app.prompts.ai_personality_guidelines import WILL_PROMPT
 router = APIRouter()
 
 @router.post("/generate", response_model=PromptResponse)
-async def generate_response(request: PromptRequest):
-    system_prompt = WILL_PROMPT
+async def generate_response(request: PromptRequest, system_prompt=WILL_PROMPT):
 
     try:
         response_text = get_openai_response(request.prompt,system_prompt)
