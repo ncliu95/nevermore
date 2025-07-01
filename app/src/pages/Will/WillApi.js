@@ -37,7 +37,7 @@ function WillApi() {
   }, []);
 
   return (
-  <div>
+  <div className='apiContainer'>
     <h1>Will's API Data</h1>
 
     <ul>

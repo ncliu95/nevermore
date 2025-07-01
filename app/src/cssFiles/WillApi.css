@@ -6,6 +6,10 @@
     color: #446fc5;
 }
 
+.apiContainer{
+    margin-top: 80px;
+}
+
 .foodButton{
     background-color: #454f7d;
     color: white;
