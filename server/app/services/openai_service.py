@@ -12,14 +12,15 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 
-def get_openai_response(user_prompt: str, system_prompt: str) -> str:
+def get_openai_response(user_prompt: str, system_prompt: str, system_resume :str) -> str:
     try:
         response = client.chat.completions.create(
             
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
+                {"role": "user", "content": user_prompt},
+                {"role": "system", "content": system_resume}
             ],
             temperature=0.7,
             max_tokens=500
