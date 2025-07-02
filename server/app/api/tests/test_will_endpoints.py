@@ -1,11 +1,9 @@
 import sys, os
 from fastapi.testclient import TestClient
-import app.api.ben_endpoints as module
-import main
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
+import app.api.will_endpoints as module
 from main import app
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 client = TestClient(app)
 
 def test_ai(monkeypatch):
@@ -18,7 +16,7 @@ def test_ai(monkeypatch):
         "prompt": "Hello, AI!"
     }
 
-    response = client.post("/ben/generate", json=payload)
+    response = client.post("/will/generate", json=payload)
     assert response.status_code == 200
     assert response.json() == {"response": "Mocked response"}
 
@@ -30,6 +28,6 @@ def test_ai_exception(monkeypatch):
 
     payload = {"prompt": "Hello, AI!"}
 
-    response = client.post("/ben/generate", json=payload)
+    response = client.post("/will/generate", json=payload)
     assert response.status_code == 500
     assert response.json() == {"detail": "OpenAI API error"}

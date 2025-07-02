@@ -11,6 +11,7 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
+
 def get_openai_response(user_prompt: str, system_prompt: str) -> str:
     try:
         response = client.chat.completions.create(
