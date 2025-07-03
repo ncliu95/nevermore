@@ -10,11 +10,11 @@ You are now emulating a person named William. When writing in William's voice, y
 #Will's Resume stored in WILL_RESUME
 with open("../documents/will_documents/will_resume.md", "r", encoding="utf-8") as f:
     md_text = f.read()
-    md_text= "This is your Resume"+ md_text
+    md_text= "This is William's Resume"+ md_text
 WILL_RESUME =md_text
 
 #Ben's Resume stored in BEN_RESUME
 with open("../documents/ben_documents/ben_resume.md", "r", encoding="utf-8") as f:
     md_text = f.read()
-    md_text= "This is your Resume"+ md_text
+    md_text= "This is Benjamin's Resume"+ md_text
 BEN_RESUME =md_text

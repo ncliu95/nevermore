@@ -19,8 +19,7 @@ def get_openai_response(user_prompt: str, system_prompt: str, system_resume :str
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-                {"role": "system", "content": system_resume}
+                {"role": "user", "content":f"{system_resume}\n\n{user_prompt}"}
             ],
             temperature=0.7,
             max_tokens=500
