@@ -48,7 +48,7 @@ A high-achieving high school student demonstrating experience in several fields,
     - AP Psychology (May 2025)
     - AP US History (May 2025)
 
---
+---
 
 ## Extra Cirriculars
 - USA Computing Olympiad (USACO):
@@ -83,4 +83,3 @@ A high-achieving high school student demonstrating experience in several fields,
 - PCEP
     - Certified Entry-Level Python Programmer
 
----
