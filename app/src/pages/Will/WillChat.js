@@ -5,6 +5,7 @@ import "../../cssFiles/WillChat.css";
 function Will() {
   const [basketballInput, setBasketballInput] = useState("");
   const [messages, setMessages] = useState([]);
+  
   const handleSend = () => {
     if (basketballInput.trim() !== "") {
       setMessages([...messages, basketballInput.trim()]);
