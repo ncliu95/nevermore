@@ -11,7 +11,7 @@ if not api_key:
     raise ValueError("OPENAI_API_KEY not found in environment. Check your .env file.")
 
 client = OpenAI(api_key=api_key)
-#test
+
 def get_openai_response(
     system_prompt: str,
     system_resume :str,
