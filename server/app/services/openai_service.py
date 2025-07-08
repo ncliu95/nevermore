@@ -19,6 +19,7 @@ def get_openai_response(
     conversation_history: List[str]
 ) -> str:
     try:
+        #set up messages
         chat_messages = [{"role": "system", "content": system_prompt}]
         chat_messages.append({"role": "user", "content": system_resume})
         for i, msg in enumerate(conversation_history):
@@ -30,7 +31,7 @@ def get_openai_response(
             model="gpt-4o-mini",
             messages=chat_messages,
             temperature=0.7,
-            max_tokens=500
+            max_tokens=500,
         )
         
         ai_reply = response.choices[0].message.content.strip()
