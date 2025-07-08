@@ -1,8 +1,8 @@
 from pydantic import BaseModel
+from typing import List
 
 class PromptRequest(BaseModel):
-    prompt: str
-    message: List[str] = []
+    messages: List[str] = []
 
 class PromptResponse(BaseModel):
-    response: str
+    response: List[str]

@@ -15,9 +15,9 @@ async def generate_response(
 
     try:
         response_text = get_openai_response(
-        request.prompt,
         system_prompt,
-        system_resume
+        system_resume,
+        request.messages,
         )
         return PromptResponse(response=response_text)
     except Exception as e:
