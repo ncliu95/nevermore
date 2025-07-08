@@ -2,7 +2,6 @@ from app.core.application import app
 from app.api import ben_endpoints
 from app.api import will_endpoints
 
-import httpx
 
 from fastapi.middleware.cors import CORSMiddleware
 
