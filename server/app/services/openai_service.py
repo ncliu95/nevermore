@@ -6,7 +6,7 @@ import tiktoken
 
 encoding = tiktoken.encoding_for_model("gpt-4o-mini")
 
-MAX_INPUT_TOKENS = 200 
+MAX_INPUT_TOKENS = 1200 
 
 def count_tokens(text: str) -> int:
     return len(encoding.encode(text))
