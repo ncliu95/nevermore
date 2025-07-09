@@ -2,6 +2,28 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import os
 from typing import List, Dict
+import tiktoken
+
+encoding = tiktoken.encoding_for_model("gpt-4o-mini")
+
+MAX_INPUT_TOKENS = 200 
+
+def count_tokens(text: str) -> int:
+    return len(encoding.encode(text))
+
+
+def trim_conversation_history(history: List, max_tokens: int) -> List:
+    trimmed = []
+    total_tokens = 0
+
+    for msg in reversed(history):
+        msg_tokens = len(encoding.encode(msg.content))
+        if total_tokens + msg_tokens > max_tokens:
+            break
+        trimmed.insert(0, msg)
+        total_tokens += msg_tokens
+
+    return trimmed
 
 load_dotenv()
 
@@ -18,9 +40,9 @@ def get_openai_response(
 ) -> List[Dict[str,str]]:
     try:
         #set up messages
-        chat_messages = [{"role": "system", "content": system_prompt}]
-        chat_messages.append({"role": "system", "content": system_resume})
-        chat_messages.extend(conversation_history)
+        chat_messages = [{"role": "system", "content": f"{system_prompt}/n/n{system_resume}"}]
+        trimmed_conversation_history=trim_conversation_history(conversation_history, MAX_INPUT_TOKENS)
+        chat_messages.extend(trimmed_conversation_history)
 
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -31,7 +53,7 @@ def get_openai_response(
         
         ai_reply = response.choices[0].message.content.strip()
 
-        updated_history = conversation_history + [{"role":"assistant","content":ai_reply}]
+        updated_history = trimmed_conversation_history + [{"role":"assistant","content":ai_reply}]
         return updated_history
     except Exception as e:
         print(f"OpenAI API error: {e}")
