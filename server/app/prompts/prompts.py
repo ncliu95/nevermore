@@ -18,3 +18,10 @@ with open("../documents/ben_documents/ben_resume.md", "r", encoding="utf-8") as 
     md_text = f.read()
     md_text= "This is Benjamin's Resume"+ md_text
 BEN_RESUME =md_text
+
+#datetime
+import datetime
+
+now = datetime.datetime.now()
+formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
+DATE_TIME = f"Current date and time: {formatted_date}"

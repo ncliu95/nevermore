@@ -3,6 +3,7 @@ from openai import OpenAI
 import os
 from typing import List, Dict
 import tiktoken
+from app.prompts.prompts import DATE_TIME
 
 encoding = tiktoken.encoding_for_model("gpt-4o-mini")
 
@@ -40,7 +41,7 @@ def get_openai_response(
 ) -> List[Dict[str,str]]:
     try:
         #set up messages
-        chat_messages = [{"role": "system", "content": f"{system_prompt}/n/n{system_resume}"}]
+        chat_messages = [{"role": "system", "content": f"{system_prompt}/n/n{system_resume}/n/n{DATE_TIME}"}]
         trimmed_conversation_history=trim_conversation_history(conversation_history, MAX_INPUT_TOKENS)
         chat_messages.extend(trimmed_conversation_history)
 
