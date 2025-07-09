@@ -1,10 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../../cssFiles/BenChat.css";
 
 function Ben() {
   const [note, setNote] = useState("");
   const [messages, setMessages] = useState([]);
-  const dummy = useRef();
+  const dummy = useRef();  
+  
+  useEffect(() => {
+      dummy.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, [messages]);
 
   const submit_function = async () => {
     if (note.trim() === "") return;
@@ -38,25 +42,25 @@ function Ben() {
       ]);
     }
 
-    dummy.current.scrollIntoView({ behavior: "smooth", block: "end" });
-  };
+   
+  }; 
+  
+
 
   return (
     <div className="parent">
+      <div ref={dummy} className="dummy" />
       <div className="chat-area">
         {messages.length === 0 ? (
           <p className="chat-text">Ask Anything.</p>
         ) : (
-          messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`textbox ${msg.role === "assistant" ? "bot" : "user"}`}
-            >
-              {msg.content}
-            </div>
-          ))
+            [...messages].reverse().map((msg, index) => (
+              <div key={index} className={`textbox ${msg.role === "assistant" ? "bot" : "user"}`}>
+                {msg.content}
+              </div>
+            ))
         )}
-        <div ref={dummy} className="dummy" />
+        
       </div>
 
       <div className="input-div">
