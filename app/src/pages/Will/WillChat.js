@@ -1,64 +1,87 @@
-import { useState, useEffect } from "react";
-import "../../App.css";
+import React, { useState, useRef, useEffect } from "react";
 import "../../cssFiles/WillChat.css";
 
-function Will() {
-  const [basketballInput, setBasketballInput] = useState("");
+function Ben() {
+  const [note, setNote] = useState("");
   const [messages, setMessages] = useState([]);
+  const dummy = useRef();  
   
-  const handleSend = () => {
-    if (basketballInput.trim() !== "") {
-      setMessages([...messages, basketballInput.trim()]);
-      setBasketballInput("");
-    }
-  };
-
   useEffect(() => {
-    const box = document.querySelector(".textsBox");
-    if (box) {
-      box.scrollTop = box.scrollHeight;
+      dummy.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, [messages]);
+
+  const submit_function = async () => {
+    if (note.trim() === "") return;
+
+    const newMessages = [...messages, { role: "user", content: note }];
+    setMessages(newMessages);
+    setNote("");
+
+    try {
+      const res = await fetch("http://localhost:8000/will/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: newMessages.map((msg) => msg.content), 
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      const data = await res.json();
+      const aiReply = data.response[data.response.length - 1];
+
+      setMessages((prev) => [...prev, { role: "assistant", content: aiReply }]);
+    } catch (err) {
+      console.error("Error:", err);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Error getting response." },
+      ]);
     }
-  }, [messages]);
+
+   
+  }; 
+  
+
 
   return (
-    <div className="row-will">
-      <div className="innerBox">
-        <h2 className="leChat-prompt">
-          Who is the greatest basketball player?
-        </h2>
+    <div className="parent">
+      <div ref={dummy} className="dummy" />
+      <div className="chat-area">
+        {messages.length === 0 ? (
+          <p className="chat-text">Talk to William!</p>
+        ) : (
+            [...messages].reverse().map((msg, index) => (
+              <div key={index} className={`textbox ${msg.role === "assistant" ? "bot" : "user"}`}>
+                {msg.content}
+              </div>
+            ))
+        )}
+        
+      </div>
 
-        <div className="input-group">
-          <input
-            id="greatestPlayerInput"
-            type="text"
-            value={basketballInput}
-            onChange={(e) => setBasketballInput(e.target.value)}
-            placeholder="Type a name..."
-            className="le-input"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSend();
-              }
-            }}
-          />
-
-          <button onClick={handleSend} className="send-button">
-            Send
-          </button>
+      <div className="input-div">
+        <input
+          className="chat-input"
+          type="text"
+          placeholder="Type your message.."
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              submit_function();
+            }
+          }}
+        />
+        <div onClick={submit_function} className="chat-button">
+          <img src="assets/arrow.png" className="arrow" alt="arrow" />
         </div>
       </div>
-
-      <div className="textsBox">
-        {messages.map((msg, index) => (
-          <div key={index} className="chat-message">
-            {msg}
-          </div>
-        ))}
-      </div>
-
-      <div className="chat-spacer"></div>
     </div>
   );
 }
 
-export default Will;
+export default Ben;

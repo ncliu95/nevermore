@@ -52,7 +52,7 @@ function Ben() {
       <div ref={dummy} className="dummy" />
       <div className="chat-area">
         {messages.length === 0 ? (
-          <p className="chat-text">Ask Anything.</p>
+          <p className="chat-text">Talk to Ben!</p>
         ) : (
             [...messages].reverse().map((msg, index) => (
               <div key={index} className={`textbox ${msg.role === "assistant" ? "bot" : "user"}`}>
