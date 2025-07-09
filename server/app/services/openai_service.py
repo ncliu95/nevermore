@@ -2,8 +2,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import os
 from typing import List, Dict
-from app.utilities.datetime_service import get_current_datetime
-from app.utilities.token_trimming_service import trim_conversation_history
+from app.utilities.datetime_util import get_current_datetime
+from app.utilities.token_trimming_util import trim_conversation_history
 
 MAX_INPUT_TOKENS = 1200 
 
