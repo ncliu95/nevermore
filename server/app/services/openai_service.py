@@ -26,6 +26,7 @@ def get_openai_response(
         trimmed_conversation_history=trim_conversation_history(conversation_history, MAX_INPUT_TOKENS)
         chat_messages.extend(trimmed_conversation_history)
 
+
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=chat_messages,

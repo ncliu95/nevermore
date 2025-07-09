@@ -14,6 +14,7 @@ async def generate_response(
 
     try:
         updated_conversation = get_openai_response(
+
         system_prompt,
         system_resume,
         request.messages,
@@ -25,3 +26,4 @@ async def generate_response(
 @router.get("/")
 def read_root():
     return {"message": "Welcome to the Nevermore API"}
+
