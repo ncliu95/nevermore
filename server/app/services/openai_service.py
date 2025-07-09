@@ -1,8 +1,11 @@
-
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
-from typing import List
+from typing import List, Dict
+from app.services.datetime_service import get_current_datetime
+from app.services.token_trimming_service import trim_conversation_history
+
+MAX_INPUT_TOKENS = 1200 
 
 load_dotenv()
 
@@ -12,22 +15,19 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-
 def get_openai_response(
     system_prompt: str,
     system_resume :str,
-    conversation_history: List[str]
-) -> str:
+    conversation_history: List[Dict[str,str]]
+) -> List[Dict[str,str]]:
     try:
         #set up messages
-        chat_messages = [{"role": "system", "content": system_prompt}]
-        chat_messages.append({"role": "system", "content": system_resume})
-        for i, msg in enumerate(conversation_history):
-            role = "user" if i % 2 == 0 else "assistant"
-            chat_messages.append({"role": role, "content": msg})
+        chat_messages = [{"role": "system", "content": f"{system_prompt}\n\n{system_resume}\n\n{get_current_datetime()}"}]
+        trimmed_conversation_history=trim_conversation_history(conversation_history, MAX_INPUT_TOKENS)
+        chat_messages.extend(trimmed_conversation_history)
+
 
         response = client.chat.completions.create(
-            
             model="gpt-4o-mini",
             messages=chat_messages,
             temperature=0.7,
@@ -36,7 +36,7 @@ def get_openai_response(
         
         ai_reply = response.choices[0].message.content.strip()
 
-        updated_history = conversation_history + [ai_reply]
+        updated_history = trimmed_conversation_history + [{"role":"assistant","content":ai_reply}]
         return updated_history
     except Exception as e:
         print(f"OpenAI API error: {e}")
