@@ -10,40 +10,39 @@ function Ben() {
       dummy.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }, [messages]);
 
-  const submit_function = async () => {
-    if (note.trim() === "") return;
+    const submit_function = async () => {
+  if (note.trim() === "") return;
 
-    const newMessages = [...messages, { role: "user", content: note }];
-    setMessages(newMessages);
-    setNote("");
+  const newMessages = [...messages, { role: "user", content: note }];
+  setMessages(newMessages);
+  setNote("");
 
-    try {
-      const res = await fetch("http://localhost:8000/will/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: newMessages.map((msg) => msg.content), 
-        }),
-      });
+  try {
+    const res = await fetch("http://localhost:8000/will/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messages: newMessages,
+      }),
+    });
 
-      if (!res.ok) throw new Error("Failed to fetch");
+    if (!res.ok) throw new Error("Failed to fetch");
 
-      const data = await res.json();
-      const aiReply = data.response[data.response.length - 1];
+    const data = await res.json();
+    const aiReply = data.response[data.response.length - 1];
 
-      setMessages((prev) => [...prev, { role: "assistant", content: aiReply }]);
-    } catch (err) {
-      console.error("Error:", err);
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: "Error getting response." },
-      ]);
-    }
+    setMessages((prev) => [...prev, { role: "assistant", content: aiReply.content }]);
+  } catch (err) {
+    console.error("Error:", err);
+    setMessages((prev) => [
+      ...prev,
+      { role: "assistant", content: "Error getting response." },
+    ]);
+  }
+};
 
-   
-  }; 
   
 
 
