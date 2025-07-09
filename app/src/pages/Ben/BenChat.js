@@ -3,30 +3,61 @@ import "../../cssFiles/BenChat.css";
 
 function Ben() {
   const [note, setNote] = useState("");
-  const [notes, setNotes] = useState([]);
+  const [messages, setMessages] = useState([]);
   const dummy = useRef();
-  const submit_function = (e) => {
+
+  const submit_function = async () => {
     if (note.trim() === "") return;
-    setNotes([...notes, note]);
+
+    const newMessages = [...messages, { role: "user", content: note }];
+    setMessages(newMessages);
     setNote("");
 
-    dummy.current.scrollIntoView({ behavior: "instant", block: "end" });
+    try {
+      const res = await fetch("http://localhost:8000/ben/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: newMessages.map((msg) => msg.content), 
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      const data = await res.json();
+      const aiReply = data.response[data.response.length - 1];
+
+      setMessages((prev) => [...prev, { role: "assistant", content: aiReply }]);
+    } catch (err) {
+      console.error("Error:", err);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Error getting response." },
+      ]);
+    }
+
+    dummy.current.scrollIntoView({ behavior: "smooth", block: "end" });
   };
 
   return (
     <div className="parent">
       <div className="chat-area">
-        {notes.length === 0 ? (
+        {messages.length === 0 ? (
           <p className="chat-text">Ask Anything.</p>
         ) : (
-          notes.map((n, index) => (
-            <div key={index} className="textbox">
-              {n}
+          messages.map((msg, index) => (
+            <div
+              key={index}
+              className={`textbox ${msg.role === "assistant" ? "bot" : "user"}`}
+            >
+              {msg.content}
             </div>
           ))
         )}
+        <div ref={dummy} className="dummy" />
       </div>
-      <div ref={dummy} className="dummy" />
 
       <div className="input-div">
         <input

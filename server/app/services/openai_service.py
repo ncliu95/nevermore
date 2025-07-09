@@ -21,7 +21,7 @@ def get_openai_response(
     try:
         #set up messages
         chat_messages = [{"role": "system", "content": system_prompt}]
-        chat_messages.append({"role": "user", "content": system_resume})
+        chat_messages.append({"role": "system", "content": system_resume})
         for i, msg in enumerate(conversation_history):
             role = "user" if i % 2 == 0 else "assistant"
             chat_messages.append({"role": role, "content": msg})
