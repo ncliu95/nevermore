@@ -2,29 +2,10 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import os
 from typing import List, Dict
-import tiktoken
 from app.services.datetime_service import get_current_datetime
-
-encoding = tiktoken.encoding_for_model("gpt-4o-mini")
+from app.services.token_trimming_service import trim_conversation_history
 
 MAX_INPUT_TOKENS = 1200 
-
-def count_tokens(text: str) -> int:
-    return len(encoding.encode(text))
-
-
-def trim_conversation_history(history: List, max_tokens: int) -> List:
-    trimmed = []
-    total_tokens = 0
-
-    for msg in reversed(history):
-        msg_tokens = len(encoding.encode(msg.content))
-        if total_tokens + msg_tokens > max_tokens:
-            break
-        trimmed.insert(0, msg)
-        total_tokens += msg_tokens
-
-    return trimmed
 
 load_dotenv()
 
