@@ -1,13 +1,12 @@
 from pydantic import BaseModel
+from typing import List, Literal
 
-class RequestJoke(BaseModel):
-    typeJoke: str
-    setup: str
-    punchline: str
+class Message(BaseModel):
+    role: Literal["user", "assistant", "system"]
+    content: str
 
-class RequestColor(BaseModel):
-    name: str
-    color: str
+class PromptRequest(BaseModel):
+    messages: List[Message]
 
-class RequestName(BaseModel):
-    name: str
+class PromptResponse(BaseModel):
+    response: List[Message]
