@@ -1,7 +1,12 @@
 from pydantic import BaseModel
+from typing import List, Literal
+
+class Message(BaseModel):
+    role: Literal["user", "assistant", "system"]
+    content: str
 
 class PromptRequest(BaseModel):
-    prompt: str
+    messages: List[Message]
 
 class PromptResponse(BaseModel):
-    response: str
+    response: List[Message]
