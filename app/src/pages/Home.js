@@ -21,7 +21,7 @@ return (
             <img className='home-image' src='./assets/IMG_5964.jpeg' alt='William Koglin'></img>
         </div>
     </div>
-        <br />
+
     <div className='about-box'>
       <h4>About This Project</h4>
       <p>This website was made by two interns, Benjamin Wang and William Koglin, during the summer of their junior year of high school.</p>
